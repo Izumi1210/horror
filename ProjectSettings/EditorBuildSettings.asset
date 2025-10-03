@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/title.unity
+    guid: c72e4653f608b6b4ea1cddd74db92cf2
+  - enabled: 1
+    path: Assets/Scenes/OP.unity
+    guid: fccd9038817a82e479de0f42c9e42a0b
+  - enabled: 1
+    path: Assets/Scenes/Omamori/box_nana0.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/Omamori/box_shouko.unity
+    guid: 8e5a6121e361cd3439817d37f2d02969
+  - enabled: 1
+    path: Assets/Scenes/Hokora/box_yuyu.unity
+    guid: d48a66d9f31fca84985c46a6633f6ba1
+  - enabled: 1
+    path: Assets/Scenes/Omamori/box_nana.unity
+    guid: 9002506f703941146acd54b7c285f057
+  - enabled: 1
+    path: Assets/Scenes/Hokora/mountain.unity
+    guid: 77ed73bb95b52a94692711dff7f6c120
+  - enabled: 1
+    path: Assets/Scenes/Hokora/kaidan.unity
+    guid: d0c9fc577f8d2484abbc15b702cbe16b
+  - enabled: 1
+    path: Assets/Scenes/Omamori/kaisou_oji.unity
+    guid: 55dcfa4aaec3dbe43925a151d162f3ac
+  - enabled: 1
+    path: Assets/Scenes/Omamori/box_nana2.unity
+    guid: c0ab777c14948ca409c909076e5b760a
+  - enabled: 1
+    path: Assets/Scenes/Omamori/innerbox.unity
+    guid: 2f8beb45db6635b48a64b1a932ad8cd9
+  - enabled: 1
+    path: Assets/Scenes/Omamori/Outer.unity
+    guid: d0ba6276bc657714ca9f0d7da423435d
+  - enabled: 1
+    path: Assets/Scenes/Omamori/Outer2.unity
+    guid: 333f13f88bfb36a41a35cafe5413022a
+  - enabled: 1
+    path: Assets/Scenes/Omamori/Outer3.unity
+    guid: c1a25b1106cb1a940a6a1e6281d84438
+  - enabled: 1
+    path: Assets/Scenes/Omamori/puzzle.unity
+    guid: 23439fbe4b38d114da6920be888113ec
+  m_configObjects: {}
