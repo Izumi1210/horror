@@ -2126,7 +2126,7 @@ MonoBehaviour:
   - denwa_mei1
   - denwa_mei_fail
   soundEffectsPerConversation:
-  - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []
 --- !u!114 &1284556644
@@ -3432,9 +3432,9 @@ MonoBehaviour:
   - hako3
   - hako4
   soundEffectsPerConversation:
-  - {fileID: 8300000, guid: 686928a0a33b51b4ab14b3da9a345726, type: 3}
-  - {fileID: 8300000, guid: 686928a0a33b51b4ab14b3da9a345726, type: 3}
-  - {fileID: 8300000, guid: 686928a0a33b51b4ab14b3da9a345726, type: 3}
+  - {fileID: 8300000, guid: 6e18c3f841ee98f43a354802ce5b5743, type: 3}
+  - {fileID: 8300000, guid: 6e18c3f841ee98f43a354802ce5b5743, type: 3}
+  - {fileID: 8300000, guid: 6e18c3f841ee98f43a354802ce5b5743, type: 3}
   dialogueUIsPerConversation:
   - {fileID: 114239472116644068, guid: 576820d27454daf4bb3b31f6c63b04ca, type: 3}
   - {fileID: 114239472116644068, guid: 576820d27454daf4bb3b31f6c63b04ca, type: 3}

@@ -347,10 +347,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1934827063}
   conversationNames:
-  - denwa_nana2
-  - denwa_nana3
+  - houtyou3_map
   soundEffectsPerConversation:
-  - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation:
   - {fileID: 0}
@@ -972,7 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1934827063}
   soundEffects:
-  - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
 --- !u!114 &853274850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,8 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1934827063}
   conversationNames:
-  - denwa_nana2
-  - denwa_nana3
+  - houtyou3_map3
   soundEffectsPerConversation:
   - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
   dialogueUIsPerConversation: []
@@ -1352,7 +1350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1934827063}
   soundEffects:
-  - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
 --- !u!114 &1001600162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,10 +1365,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1934827063}
   conversationNames:
-  - denwa_nana2
-  - denwa_nana3
+  - houtyou3_police
   soundEffectsPerConversation:
-  - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation:
   - {fileID: 0}
@@ -2001,7 +1998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1934827063}
   soundEffects:
-  - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
 --- !u!114 &1226556127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2016,8 +2013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1934827063}
   conversationNames:
-  - denwa_nana2
-  - denwa_nana3
+  - houtyou3_map2
   soundEffectsPerConversation:
   - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
   dialogueUIsPerConversation: []

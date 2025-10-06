@@ -50,4 +50,130 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Omamori/puzzle.unity
     guid: 23439fbe4b38d114da6920be888113ec
+  - enabled: 1
+    path: Assets/Scenes/Omamori/wakare2/wakare2.2.unity
+    guid: 5d06d419272e5f04eb899c2db11482ab
+  - enabled: 1
+    path: Assets/Scenes/Omamori/wakare2/wakare2.3.unity
+    guid: 9133f30f4917f1b489d74e0d17745357
+  - enabled: 1
+    path: Assets/Scenes/Omamori/wakare2/wakare2.4_GameOver.unity
+    guid: 4c82e3beb06bdf4499454ce96318cd54
+  - enabled: 1
+    path: Assets/Scenes/Omamori/wakare3/wakare3.2.unity
+    guid: eb19bc59219659741b54096a34f37843
+  - enabled: 1
+    path: Assets/Scenes/Omamori/wakare3/wakare3.3_GameOver.unity
+    guid: f94d9aa2047af0b4fa3a0f1e86f7c728
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/riri1.unity
+    guid: b709b85f141b22a449d4ccb66e854c01
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/ririhouse1.unity
+    guid: 556d9e5749a598b49aa5e11c62d03cf3
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/ririhouse2.unity
+    guid: e57fd390d23eef049adf51fa72d03a4f
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/ririhouse3.unity
+    guid: 0cc9f128596766548862473f6eef2464
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/ririhouse4.unity
+    guid: d46693d05dbd78846ac225c046dbe0a0
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/senmendai.unity
+    guid: 7e47247d292c07e49a735369273425e2
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/houtyou1.unity
+    guid: 63c435ac35045ff4f9ab29c4161a9896
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/houtyou2.unity
+    guid: cb65cf8441d91c1459a3b656bd43ae40
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/houtyou3.unity
+    guid: 67e5dcd9c18be344b8b0dac240bec3a0
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath1.unity
+    guid: 47ef414415aebf445afd1d8feabcac3f
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath2.unity
+    guid: a77b1d4c32b26694588ddd6edf29ffd1
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath3.unity
+    guid: c747798aed77ab14693edac53250272d
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath4.unity
+    guid: c3d800ab45fc04f44b7f5b44df137393
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath5_denwa.unity
+    guid: a0a09bb404143274992227536fec71a0
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath5_sleep.unity
+    guid: 5b74860de0fabf04bbc97497d3f8e7bd
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath6_denwa.unity
+    guid: 34be92407b98ca9438f6dd821d62a874
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath6_sleep.unity
+    guid: f18df631215af3444831332eb9e1de5e
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath7_denwa.unity
+    guid: df763264e41a08e46bcbd388d7629c2e
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath8_denwa.unity
+    guid: b333de47ed334b548a6e993a8cdea258
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath9_denwa.unity
+    guid: 5933d877599cd684a8c8c36939bb3a86
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath10_denwa.unity
+    guid: ac3fe780be94b9547825166a8e9a3905
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath11_denwa.unity
+    guid: c7a2c169199f52747a9ff2e62d8720d5
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath12_denwa.unity
+    guid: 1f0624d5be7eb7e428cb0ec1b1d9b835
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath13_denwa.unity
+    guid: c9d8c14bc0bb7944eb832f5b37fc5789
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath14_denwa_GameOver.unity
+    guid: 53cc3406d08450f479bca045bc65ca4f
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive2.unity
+    guid: 3f1f4f8573b869641a8f632d85d34002
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive3_gunma.unity
+    guid: 00bf1c2c48da3f842a42dbc2875c0784
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive3_shikoku.unity
+    guid: a638fcfe076e54946857232e543f5e25
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive4_gunma.unity
+    guid: 973e8eb2a04eebc40a03a1ed1417f3d8
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive4_shikoku.unity
+    guid: 57fa392ee7ebbca4d9580ef6f49ad6af
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive5_shikoku.unity
+    guid: 2ea4887a33e1810479519cea77320b17
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive6_shikoku.unity
+    guid: 60857795a71e1f141ba324c88c9ad808
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive7_shikoku.unity
+    guid: 56a95c61b1b8d8943a5239abe33f05eb
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive8_shikoku.unity
+    guid: 4bf2bf8eb4c76df4aaad7677d21e141d
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/news_jisyu_GameOver.unity
+    guid: d459645cef0bdff448e4350ba7d0dce5
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/news_shima_GameOver.unity
+    guid: 74caeddd46507a849bab4aa4025f84f3
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 8e7f6016e3f2a1b459b20206b078bc01
   m_configObjects: {}

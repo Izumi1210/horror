@@ -451,7 +451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8529530251656517175, guid: fcef949f5edb69d4b825998a0e3a9573, type: 3}
       propertyPath: conversation
-      value: ririhouse3
+      value: senmendai2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

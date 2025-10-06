@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8529530251656517175, guid: fcef949f5edb69d4b825998a0e3a9573, type: 3}
       propertyPath: conversation
-      value: wakare2.3
+      value: wakare3.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

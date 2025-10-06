@@ -88,7 +88,7 @@ public class SlidePuzzleSceneDirector : MonoBehaviour
                 if (buttonRetry.activeSelf)
                 {
                     Debug.Log("クリア！！");
-                    SceneManager.LoadScene("box_yuyu");
+                    SceneManager.LoadScene("innerbox");
                 }
             }
         }
