@@ -11,6 +11,7 @@ public class SlidePuzzleSceneDirector : MonoBehaviour
     [SerializeField] GameObject buttonRetry;
     // シャッフル回数
     [SerializeField] int shuffleCount;
+    [SerializeField] string clearSceneName;
 
     // 初期位置
     List<Vector2> startPositions;
@@ -88,7 +89,7 @@ public class SlidePuzzleSceneDirector : MonoBehaviour
                 if (buttonRetry.activeSelf)
                 {
                     Debug.Log("クリア！！");
-                    SceneManager.LoadScene("innerbox");
+                    SceneManager.LoadScene(clearSceneName);
                 }
             }
         }
@@ -97,18 +98,21 @@ public class SlidePuzzleSceneDirector : MonoBehaviour
     // 引数のピースが0番のピースと隣接していたら0番のピースを返す
     GameObject GetEmptyPiece(GameObject piece)
     {
-        // 2点間の距離を代入
-        float dist =
-            Vector2.Distance(piece.transform.position, pieces[0].transform.position);
+        // 2点間の距離を計算
+        float dist = Vector2.Distance(piece.transform.position, pieces[0].transform.position);
 
-        // 距離が1なら0番のピースを返す（2個以上離れていたり、斜めの場合は1より大きい距離になる）
-        if (dist == 1)
+        // デバッグ確認用（任意）
+        // Debug.Log($"{piece.name} と空白ピースの距離: {dist}");
+
+        // 距離が 1 ± 0.1 以内なら「隣接している」とみなす
+        if (Mathf.Abs(dist - 1f) < 0.1f)
         {
             return pieces[0];
         }
 
         return null;
     }
+
 
     // 2つのピースの位置を入れかえる
     void SwapPiece(GameObject pieceA, GameObject pieceB)

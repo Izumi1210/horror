@@ -176,4 +176,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 8e7f6016e3f2a1b459b20206b078bc01
+  - enabled: 1
+    path: Assets/Scenes/Omamori/wakare2/wakare2.3_death.unity
+    guid: 8e77423da86ebde4fb53cf8b5fdcc050
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath0.unity
+    guid: 5a5d043c3bd0efa49ae8f369c40e6766
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive1.2.unity
+    guid: 7805e498be4814743939aec4c8d974bb
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive5_shikoku2.unity
+    guid: 53ee5c6da27394947935c3a5690a21a4
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive6_shikoku2.unity
+    guid: 7a6e8cdf58767a941a4255411ef99ed2
   m_configObjects: {}
