@@ -17,11 +17,11 @@ public class ShootingController : MonoBehaviour
 
     void Start()
     {
-        RefreshEnemyBorad();
+        RefreshEnemyBoard();
         StartGame();
     }
 
-    void RefreshEnemyBorad()
+    void RefreshEnemyBoard()
     {
         foreach (var enemy in enemyBoards)
             enemy.SetStateDisable();
