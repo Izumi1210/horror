@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Hokora/mountain.unity
     guid: 77ed73bb95b52a94692711dff7f6c120
   - enabled: 1
-    path: Assets/Scenes/Hokora/kaidan.unity
+    path: Assets/Scenes/Hokora/kaidan1.unity
     guid: d0c9fc577f8d2484abbc15b702cbe16b
   - enabled: 1
     path: Assets/Scenes/Omamori/kaisou_oji.unity
@@ -191,4 +191,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Omamori/ririroute/live/ririlive6_shikoku2.unity
     guid: 7a6e8cdf58767a941a4255411ef99ed2
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki1.unity
+    guid: 85c5b22d7e51b7f48bdf73985ae47b2a
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki2.unity
+    guid: 95d2b482e776bae489c585fd16b8e2ff
+  - enabled: 1
+    path: Assets/Scenes/Hokora/kaidan2.unity
+    guid: d90910d3def15524f82b0c85ad9fe033
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki3.unity
+    guid: 611e287e1922ad2488d6177034f40303
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki4.unity
+    guid: 456db58a47fde2e4f8e3ed81ced64d54
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki5.unity
+    guid: 05e757e4b154233459491ef9bbc1a4ba
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki6.unity
+    guid: 3473f5634419fe648bf57fa5ad20cee1
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki7.unity
+    guid: 9dab074f774d97d4bbb76db5624c8d52
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki8.unity
+    guid: 605db4742e918bf4198c6775a3d4cc2e
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki9.unity
+    guid: a87d9c02a8dade948943783e7592f619
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki10.unity
+    guid: 70ce4991395550b488f61ff9b1739555
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorayuuki/yuuki11.unity
+    guid: 9ae91900b1fab1640b161e121b79240d
   m_configObjects: {}
