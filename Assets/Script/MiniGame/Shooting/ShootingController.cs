@@ -52,25 +52,13 @@ public class ShootingController : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
 
             int activeEnemyIndex = UnityEngine.Random.Range(0, enemyBoards.Count);
-            if(enemyBoards[activeEnemyIndex].GetIsDisable())
-                StartCoroutine(SingleEnemyController(enemyBoards[activeEnemyIndex]));
+            if(enemyBoards[activeEnemyIndex].GetState() == EnemyBoard.State.Disable)
+                EnemyAwake(enemyBoards[activeEnemyIndex]);
         }
     }
 
-    IEnumerator SingleEnemyController(EnemyBoard enemyboard)
+    void EnemyAwake(EnemyBoard enemyBoard)
     {
-        // スタンバイ状態にする
-        enemyboard.SetStateStandby();
-        yield return new WaitForSeconds(enemyStandbyTime);
-
-        // アクティブ状態にする
-        enemyboard.SetStateActive();
-        yield return new WaitForSeconds(enemyActiveTime);
-
-        // 攻撃判定
-        // ここに攻撃判定の処理を追加する
-
-        // 無効状態にする
-        enemyboard.SetStateDisable();
+        enemyBoard.SetStateStandby();
     }
 }
