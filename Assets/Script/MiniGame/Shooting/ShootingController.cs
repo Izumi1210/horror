@@ -14,13 +14,17 @@ public class ShootingController : MonoBehaviour
     [Header("敵の攻撃の速さ")]
     [SerializeField] float enemyStandbyTime = 0.5f;
     [SerializeField] float enemyActiveTime = 1.0f;
-
+    [Header("制限時間")]
+    [SerializeField] float gameTimeLimit = 30.0f;
     void Start()
     {
         RefreshEnemyBoard();
         StartGame();
     }
 
+    /// <summary>
+    /// 全ての敵を非アクティブ状態にする
+    /// </summary>
     void RefreshEnemyBoard()
     {
         foreach (var enemy in enemyBoards)
@@ -37,13 +41,14 @@ public class ShootingController : MonoBehaviour
         isInProgress = true;
         foreach (var enemy in enemyBoards)
             enemy.gameObject.SetActive(true);
-        StartCoroutine(ShootingGameCoroutine());
+        StartCoroutine(ShootingGameEnemyCoroutine());
+        StartCoroutine(ShootingGameTimerCoroutine());
     }
 
     /// <summary>
     /// ミニゲーム中の敵の挙動を制御するコルーチン
     /// </summary>
-    IEnumerator ShootingGameCoroutine()
+    IEnumerator ShootingGameEnemyCoroutine()
     {
         while (isInProgress)
         {
@@ -55,6 +60,23 @@ public class ShootingController : MonoBehaviour
             if(enemyBoards[activeEnemyIndex].GetState() == EnemyBoard.State.Disable)
                 EnemyAwake(enemyBoards[activeEnemyIndex]);
         }
+    }
+
+    /// <summary>
+    /// ゲーム終了までの時間を計測するコルーチン
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator ShootingGameTimerCoroutine()
+    {
+        float elapse = 0.0f;
+        while (elapse < gameTimeLimit)
+        {
+            yield return null;
+            elapse += Time.deltaTime;
+        }
+        Debug.Log("ミニゲーム終了");
+        isInProgress = false;
+        RefreshEnemyBoard();
     }
 
     void EnemyAwake(EnemyBoard enemyBoard)
