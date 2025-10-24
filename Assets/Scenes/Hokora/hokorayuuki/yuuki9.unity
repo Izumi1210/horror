@@ -193,8 +193,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 2047132275}
   conversationNames:
-  - senmendai1
-  soundEffectsPerConversation: []
+  - yuuki9.back
+  soundEffectsPerConversation:
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []
 --- !u!58 &75518949

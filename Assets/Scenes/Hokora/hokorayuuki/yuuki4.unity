@@ -576,7 +576,25 @@ MonoBehaviour:
   audioSource: {fileID: 1934412243}
   conversationNames:
   - yuuki4.shashin
+  - yuuki4.shashin
+  - yuuki4.shashin
+  - yuuki4.shashin
+  - yuuki4.shashin
+  - yuuki4.shashin
+  - yuuki4.shashin
+  - yuuki4.shashin
+  - yuuki4.shashin
+  - yuuki4.shashin
   soundEffectsPerConversation:
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []

@@ -1632,7 +1632,25 @@ MonoBehaviour:
   audioSource: {fileID: 1458478301}
   conversationNames:
   - ririlive6_shikoku4
+  - ririlive6_shikoku4
+  - ririlive6_shikoku4
+  - ririlive6_shikoku4
+  - ririlive6_shikoku4
+  - ririlive6_shikoku4
+  - ririlive6_shikoku4
+  - ririlive6_shikoku4
+  - ririlive6_shikoku4
+  - ririlive6_shikoku4
   soundEffectsPerConversation:
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []
@@ -2632,9 +2650,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566394335}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -12, z: -8}
-  m_LocalScale: {x: 1.8682606, y: 2.040926, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2999878, y: -12, z: -8}
+  m_LocalScale: {x: 1.9, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2794,6 +2812,6 @@ SceneRoots:
   - {fileID: 218750269}
   - {fileID: 1649003803}
   - {fileID: 66027855}
-  - {fileID: 1566394338}
   - {fileID: 980764666}
   - {fileID: 803738617}
+  - {fileID: 1566394338}
