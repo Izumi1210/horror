@@ -327,7 +327,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: hokora_yuuki2
+  conversation: 
   conversationConversant: {fileID: 437318348}
   conversationActor: {fileID: 437318348}
   startConversationEntryID: -1
