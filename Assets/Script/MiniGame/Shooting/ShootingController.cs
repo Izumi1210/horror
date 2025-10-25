@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -28,17 +29,24 @@ public class ShootingController : MonoBehaviour
     [Header("敵の攻撃の速さ")]
     [SerializeField] float enemyStandbyTime = 0.5f;
     [SerializeField] float enemyActiveTime = 1.0f;
-    [Header("制限時間")]
-    [SerializeField] float gameTimeLimit = 30.0f;
+
     [Header("HP")]
     [SerializeField] int playerHP = 3;
     [Tooltip("添字が大きい方ほどHPが多い")]
     [SerializeField] GameObject[] hpUI;
 
+    [Header("制限時間")]
+    [SerializeField] const float gameTimeLimit = 20.0f;
+    [Header("ミニゲームの残り時間")]
+    [SerializeField] float remainingTime = 20.0f;
+    [Header("時間の表示")]
+    [SerializeField] TextMeshProUGUI timeNumber;
+
     void Start()
     {
         RefreshEnemyBoard();    // 敵の初期化
         PlayerHPChange(0);      // HP表示の初期化
+        TimerUpdate();          // 時間表示の初期化
         StartGame();
     }
 
@@ -82,26 +90,36 @@ public class ShootingController : MonoBehaviour
         }
     }
 
+    void EnemyAwake(EnemyBoard enemyBoard)
+    {
+        enemyBoard.SetStateStandby();
+    }
+
     /// <summary>
     /// ゲーム終了までの時間を計測するコルーチン
     /// </summary>
     /// <returns></returns>
     IEnumerator ShootingGameTimerCoroutine()
     {
-        float elapse = 0.0f;
-        while (elapse < gameTimeLimit)
+        remainingTime = gameTimeLimit;
+        while (remainingTime > 0)
         {
             yield return null;
-            elapse += Time.deltaTime;
+            if (!isInProgress)
+                yield break;
+            remainingTime = Mathf.Max(0f, remainingTime -= Time.deltaTime);
+            TimerUpdate();
         }
-        Debug.Log("ミニゲーム終了");
-        isInProgress = false;
-        RefreshEnemyBoard();
+        remainingTime = 0f;
+        Clear();
     }
 
-    void EnemyAwake(EnemyBoard enemyBoard)
+    /// <summary>
+    /// 時間の表示を更新する
+    /// </summary>
+    public void TimerUpdate()
     {
-        enemyBoard.SetStateStandby();
+        timeNumber.text = Mathf.CeilToInt(remainingTime).ToString();
     }
 
     /// <summary>
@@ -127,6 +145,17 @@ public class ShootingController : MonoBehaviour
     /// </summary>
     public void Dead()
     {
+        isInProgress = false;
+        TimerUpdate();
+        RefreshEnemyBoard();
         Debug.Log("プレイヤー死亡");
+    }
+
+    public void Clear()
+    {
+        isInProgress = false;
+        TimerUpdate();
+        RefreshEnemyBoard();
+        Debug.Log("ミニゲームクリア");
     }
 }
