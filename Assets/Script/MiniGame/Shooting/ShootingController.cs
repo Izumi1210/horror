@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ShootingController : MonoBehaviour
 {
@@ -36,11 +37,14 @@ public class ShootingController : MonoBehaviour
     [SerializeField] GameObject[] hpUI;
 
     [Header("制限時間")]
-    [SerializeField] const float gameTimeLimit = 20.0f;
+    [SerializeField] float gameTimeLimit = 20.0f;
     [Header("ミニゲームの残り時間")]
     [SerializeField] float remainingTime = 20.0f;
     [Header("時間の表示")]
     [SerializeField] TextMeshProUGUI timeNumber;
+
+    [Header("ゲームオーバー時に遷移するシーン")]
+    [SerializeField] string gameOverSceneName;
 
     void Start()
     {
@@ -149,6 +153,7 @@ public class ShootingController : MonoBehaviour
         TimerUpdate();
         RefreshEnemyBoard();
         Debug.Log("プレイヤー死亡");
+        SceneManager.LoadScene(gameOverSceneName);
     }
 
     public void Clear()

@@ -1479,8 +1479,10 @@ MonoBehaviour:
   - {fileID: 1956758149}
   - {fileID: 299511309}
   - {fileID: 1344052151}
+  gameTimeLimit: 20
   remainingTime: 20
   timeNumber: {fileID: 473993925}
+  gameOverSceneName: GameOver
 --- !u!1 &2078882184
 GameObject:
   m_ObjectHideFlags: 0
