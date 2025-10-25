@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def2a70225301954f8adb6a209ca959f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugMode: 1
+  DebugMode: 0
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &801547882
 GameObject:
