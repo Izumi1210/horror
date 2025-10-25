@@ -6,8 +6,22 @@ using UnityEngine.EventSystems;
 
 public class ShootingController : MonoBehaviour
 {
+    public static ShootingController instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     [SerializeField] List<EnemyBoard> enemyBoards;
     public bool isInProgress = false;
+    
     [Header("敵の出現頻度")]
     [SerializeField] float averageEnemyActiveTime = 2.0f;
     [SerializeField] float RandomRangeEnemyActiveTime = 1.0f;
@@ -16,9 +30,15 @@ public class ShootingController : MonoBehaviour
     [SerializeField] float enemyActiveTime = 1.0f;
     [Header("制限時間")]
     [SerializeField] float gameTimeLimit = 30.0f;
+    [Header("HP")]
+    [SerializeField] int playerHP = 3;
+    [Tooltip("添字が大きい方ほどHPが多い")]
+    [SerializeField] GameObject[] hpUI;
+
     void Start()
     {
-        RefreshEnemyBoard();
+        RefreshEnemyBoard();    // 敵の初期化
+        PlayerHPChange(0);      // HP表示の初期化
         StartGame();
     }
 
@@ -82,5 +102,31 @@ public class ShootingController : MonoBehaviour
     void EnemyAwake(EnemyBoard enemyBoard)
     {
         enemyBoard.SetStateStandby();
+    }
+
+    /// <summary>
+    /// プレイヤーのHPを変更し、表示を更新する
+    /// </summary>
+    public void PlayerHPChange(int changeAmount)
+    {
+        playerHP += changeAmount;
+        for (int i = 0; i < hpUI.Length; i++)
+        {
+            hpUI[i].SetActive(i == playerHP);
+        }
+        
+        if (playerHP <= 0)
+        {
+            hpUI[0].SetActive(true);
+            Dead();
+        }
+    }
+
+    /// <summary>
+    /// プレイヤーが死亡した時の処理
+    /// </summary>
+    public void Dead()
+    {
+        Debug.Log("プレイヤー死亡");
     }
 }

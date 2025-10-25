@@ -57,7 +57,7 @@ public class EnemyBoard : MonoBehaviour, IPointerClickHandler
 
     void EnemyAttack()
     {
-        // “G‚ªUŒ‚‚µ‚½‚Ìˆ—‚ğ‘‚­
+        ShootingController.instance.PlayerHPChange(-1);
     }
 
     /// <summary>
