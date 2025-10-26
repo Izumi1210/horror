@@ -84,9 +84,10 @@ public class ShootingController : MonoBehaviour
     {
         while (isInProgress)
         {
-            // ある程度の幅のある待機時間の後、ランダムな敵をスタンバイ状態にする
+            // ある程度の幅のある待機時間の後、ランダムな敵をwait状態にする
             float waitTime = averageEnemyActiveTime + UnityEngine.Random.Range(-RandomRangeEnemyActiveTime, RandomRangeEnemyActiveTime);
             yield return new WaitForSeconds(waitTime);
+            if (!isInProgress) break;
 
             int activeEnemyIndex = UnityEngine.Random.Range(0, enemyBoards.Count);
             if(enemyBoards[activeEnemyIndex].GetState() == EnemyBoard.State.Disable)
@@ -96,7 +97,8 @@ public class ShootingController : MonoBehaviour
 
     void EnemyAwake(EnemyBoard enemyBoard)
     {
-        enemyBoard.SetStateStandby();
+        // 敵を待機状態にする
+        enemyBoard.SetStateWait();
     }
 
     /// <summary>

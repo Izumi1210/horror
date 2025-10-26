@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,7 +9,8 @@ public class EnemyBoard : MonoBehaviour, IPointerClickHandler
     public enum State
     {
         Wait,
-        Active,
+        Ready,
+        Attacking,
         Killed,
         Disable
     }
@@ -16,6 +18,13 @@ public class EnemyBoard : MonoBehaviour, IPointerClickHandler
     State currentState = State.Disable;
     Animator enemyAnimator;
     SpriteRenderer enemySpriteRenderer;
+    [Header("oŒ»‚µ‚Ä‚©‚çe‚ğ\‚¦‚é‚Ü‚Å‚ÌŠÔ")]
+    [SerializeField] float waitTIme = 1.0f;
+    [Header("e‚ğ\‚¦‚Ä‚©‚çUŒ‚‚·‚é‚Ü‚Å‚ÌŠÔ")]
+    [SerializeField] float attackInterval = 2.0f;
+    [Header("UŒ‚—Í")]
+    [SerializeField] int attackPower = 1;
+    Coroutine waitCoroutine;
 
     void Start()
     {
@@ -27,17 +36,29 @@ public class EnemyBoard : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void SetStateStandby()
+    public void SetStateWait()
     {
         enemySpriteRenderer.enabled = true;
         currentState = State.Wait;
+        enemyAnimator.SetTrigger("Wait");
+
+        if (waitCoroutine != null)
+            StopCoroutine(waitCoroutine);
+        waitCoroutine = StartCoroutine(Wait());
+    }
+
+    public void SetStateReady()
+    {
+        enemySpriteRenderer.enabled = true;
+        currentState = State.Ready;
         enemyAnimator.SetTrigger("Ready");
     }
 
-    public void SetStateActive()
+    public void SetStateAttacking()
     {
         enemySpriteRenderer.enabled = true;
-        currentState = State.Active;
+        currentState = State.Attacking;
+        enemyAnimator.SetTrigger("Attack");
     }
 
     public void SetStateKilled()
@@ -45,10 +66,24 @@ public class EnemyBoard : MonoBehaviour, IPointerClickHandler
         enemySpriteRenderer.enabled = true;
         if (currentState == State.Wait)
             enemyAnimator.SetTrigger("DamagedWhileWait");
-        else if (currentState == State.Active)
+        else if (currentState == State.Attacking || currentState == State.Ready)
             enemyAnimator.SetTrigger("DamagedWhileShoot");
 
+        // UŒ‚‚ğ~‚ß‚é
+        StopCoroutine(waitCoroutine);
+        waitCoroutine = null;
         currentState = State.Killed;
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(waitTIme);
+        SetStateReady();
+        while (true)
+        {
+            yield return new WaitForSeconds(attackInterval);
+            SetStateAttacking();
+        }
     }
 
     public void SetStateDisable()
@@ -59,7 +94,7 @@ public class EnemyBoard : MonoBehaviour, IPointerClickHandler
 
     void EnemyAttack()
     {
-        ShootingController.instance.PlayerHPChange(-1);
+        ShootingController.instance.PlayerHPChange(-attackPower);
     }
 
     /// <summary>
@@ -68,7 +103,7 @@ public class EnemyBoard : MonoBehaviour, IPointerClickHandler
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (currentState == State.Wait || currentState == State.Active)
+        if (currentState == State.Wait || currentState == State.Ready || currentState == State.Attacking)
         {
             SetStateKilled();
         }
