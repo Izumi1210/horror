@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[System.Serializable]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class EnemyBoard : MonoBehaviour, IPointerClickHandler
 {
     public enum State
@@ -13,11 +14,12 @@ public class EnemyBoard : MonoBehaviour, IPointerClickHandler
     }
 
     State currentState = State.Disable;
-    [SerializeField] Animator enemyAnimator;
+    Animator enemyAnimator;
     SpriteRenderer enemySpriteRenderer;
 
     void Start()
     {
+        enemyAnimator = GetComponent<Animator>();
         enemySpriteRenderer = GetComponent<SpriteRenderer>();
         if (enemySpriteRenderer == null)
         {
