@@ -4853,7 +4853,7 @@ MonoBehaviour:
   - {fileID: 525947481}
   buttonRetry: {fileID: 882337535}
   shuffleCount: 30
-  clearSceneName: rirideath9_death
+  clearSceneName: rirideath9_denwa
 --- !u!4 &1721562846
 Transform:
   m_ObjectHideFlags: 0

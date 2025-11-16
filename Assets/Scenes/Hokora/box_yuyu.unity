@@ -1772,8 +1772,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.45372, y: -27.7784}
-  m_SizeDelta: {x: 136.90744, y: 0}
+  m_AnchoredPosition: {x: 64.69413, y: -34.602737}
+  m_SizeDelta: {x: 129.38826, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622994482
 MonoBehaviour:
@@ -2083,8 +2083,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 72.45372, y: -201.67041}
-  m_SizeDelta: {x: 136.90744, y: 0}
+  m_AnchoredPosition: {x: 68.69413, y: -227.54794}
+  m_SizeDelta: {x: 129.38826, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873747489
 MonoBehaviour:
@@ -4023,6 +4023,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1024589797444566, guid: 576820d27454daf4bb3b31f6c63b04ca, type: 3}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: displaySettings.subtitleSettings.continueButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.inputSettings.alwaysForceResponseMenu
       value: 0
       objectReference: {fileID: 0}
@@ -4593,8 +4597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.45372, y: -83.335205}
-  m_SizeDelta: {x: 136.90744, y: 0}
+  m_AnchoredPosition: {x: 64.69413, y: -103.80821}
+  m_SizeDelta: {x: 129.38826, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1897080265
 MonoBehaviour:

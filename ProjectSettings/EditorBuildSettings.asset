@@ -233,4 +233,49 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hokora/hokorayuuki/yuuki13.unity
     guid: e3cfbf0329e6b8f46b1b9bf8665d80c5
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi1.unity
+    guid: 6ce2d22958ebbba46a076cad8f15caab
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi2.unity
+    guid: 97bc9f9870505d04f9474a03f9b79fea
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi3.unity
+    guid: dcc618ca7ce875848a6bdaaa47eff46e
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi4.unity
+    guid: 4c45411e8d516134a80152430d75068c
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi5.unity
+    guid: f156cd30a241a3b46973f3ce05a62278
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi6.unity
+    guid: fa446ad64af5c9b48bee094f7dcc6c43
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi9.unity
+    guid: 8d835a25891a0f84e9d2047729c015b2
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi7.unity
+    guid: 0b20038a0eeab514d80eb9cca0d3b4a9
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi8.unity
+    guid: 0935c0e3c265e46488594841d0e88b61
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi19.unity
+    guid: 2ad082858cd3c8046829bc961dda9ee7
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorakana/kanade1.unity
+    guid: 7b20ac236f5a21d4bb28cf4a3e70e991
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorakana/kanade2.unity
+    guid: 23f3e6ebd46057449968ea23763f7eb2
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorakana/kanade3.unity
+    guid: e081068f2e72705459f8039578a6a824
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/rirideath8_puzzle.unity
+    guid: 30eb3dd9d3309b640a8b186b2940d315
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/death/ririlive1.unity
+    guid: 5cc7cea7cad7a524fb97ef369ece8cdd
   m_configObjects: {}

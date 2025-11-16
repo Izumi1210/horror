@@ -2011,8 +2011,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 141.2482, y: -24}
-  m_SizeDelta: {x: 282.4964, y: 0}
+  m_AnchoredPosition: {x: 64.69413, y: -34.602737}
+  m_SizeDelta: {x: 129.38826, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622994482
 MonoBehaviour:
@@ -2322,8 +2322,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 145.2482, y: -170.28014}
-  m_SizeDelta: {x: 282.4964, y: 0}
+  m_AnchoredPosition: {x: 68.69413, y: -227.54794}
+  m_SizeDelta: {x: 129.38826, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873747489
 MonoBehaviour:
@@ -2510,6 +2510,7 @@ MonoBehaviour:
   soundEffectsPerConversation:
   - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
   dialogueUIsPerConversation: []
+  requiredFlagsPerConversation: []
 --- !u!61 &974990823
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3790,6 +3791,7 @@ MonoBehaviour:
   soundEffectsPerConversation:
   - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
   dialogueUIsPerConversation: []
+  requiredFlagsPerConversation: []
 --- !u!114 &1629794356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4260,6 +4262,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1024589797444566, guid: 576820d27454daf4bb3b31f6c63b04ca, type: 3}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: displaySettings.subtitleSettings.continueButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.inputSettings.alwaysForceResponseMenu
       value: 0
       objectReference: {fileID: 0}
@@ -4591,8 +4597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 141.2482, y: -72}
-  m_SizeDelta: {x: 282.4964, y: 0}
+  m_AnchoredPosition: {x: 64.69413, y: -103.80821}
+  m_SizeDelta: {x: 129.38826, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1897080265
 MonoBehaviour:

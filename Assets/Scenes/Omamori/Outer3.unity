@@ -193,7 +193,25 @@ MonoBehaviour:
   audioSource: {fileID: 801547885}
   conversationNames:
   - wakare3
+  - wakare3
+  - wakare3
+  - wakare3
+  - wakare3
+  - wakare3
+  - wakare3
+  - wakare3
+  - wakare3
+  - wakare3
   soundEffectsPerConversation:
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []
@@ -444,7 +462,25 @@ MonoBehaviour:
   audioSource: {fileID: 801547885}
   conversationNames:
   - wakare2
+  - wakare2
+  - wakare2
+  - wakare2
+  - wakare2
+  - wakare2
+  - wakare2
+  - wakare2
+  - wakare2
+  - wakare2
   soundEffectsPerConversation:
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []
@@ -1250,8 +1286,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1024589797444566, guid: 576820d27454daf4bb3b31f6c63b04ca, type: 3}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: displaySettings.subtitleSettings.continueButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.inputSettings.alwaysForceResponseMenu
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: displaySettings.subtitleSettings.allowPCSubtitleReminders
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.subtitleSettings.showPCSubtitlesDuringLine
@@ -1626,7 +1670,25 @@ MonoBehaviour:
   audioSource: {fileID: 801547885}
   conversationNames:
   - wakare4
+  - wakare4
+  - wakare4
+  - wakare4
+  - wakare4
+  - wakare4
+  - wakare4
+  - wakare4
+  - wakare4
+  - wakare4
   soundEffectsPerConversation:
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []

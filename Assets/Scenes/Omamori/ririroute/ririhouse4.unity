@@ -719,10 +719,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13db6d8766be65f4fb99fa660dd0e672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 517138546}
   conversationNames:
   - senmendai1
-  soundEffectsPerConversation: []
+  - senmendai1
+  - senmendai1
+  - senmendai1
+  - senmendai1
+  - senmendai1
+  - senmendai1
+  - senmendai1
+  - senmendai1
+  - senmendai1
+  soundEffectsPerConversation:
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []
 --- !u!58 &739019441
@@ -1667,6 +1686,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1024589797444566, guid: 576820d27454daf4bb3b31f6c63b04ca, type: 3}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: displaySettings.subtitleSettings.continueButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.inputSettings.alwaysForceResponseMenu
       value: 0
       objectReference: {fileID: 0}
@@ -2293,10 +2316,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13db6d8766be65f4fb99fa660dd0e672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 517138546}
   conversationNames:
   - makura1
-  soundEffectsPerConversation: []
+  - makura1
+  - makura1
+  - makura1
+  - makura1
+  - makura1
+  - makura1
+  - makura1
+  - makura1
+  - makura1
+  soundEffectsPerConversation:
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
+  - {fileID: 8300000, guid: 63a76ce49141a50499707aa4ecec725b, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []
 --- !u!58 &2039957871
