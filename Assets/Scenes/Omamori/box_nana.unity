@@ -1548,6 +1548,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7023967917084444082, guid: f5fdc156d994fba47973224f9888db01, type: 3}
       insertIndex: -1
       addedObject: {fileID: 893268923}
+    - targetCorrespondingSourceObject: {fileID: 7023967917084444082, guid: f5fdc156d994fba47973224f9888db01, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 893268934}
     - targetCorrespondingSourceObject: {fileID: 2486055632340732423, guid: f5fdc156d994fba47973224f9888db01, type: 3}
       insertIndex: -1
       addedObject: {fileID: 893268922}
@@ -1596,7 +1599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 493688104}
   soundEffects:
-  - {fileID: 8300000, guid: 693697cefb80b42408c3a29f2ce2fefb, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
 --- !u!114 &893268924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,7 +1612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5e06706c71fa442b3bd4eea7be440b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 180065924}
   duration: 3
   requiredFlag: {fileID: 11400000, guid: 48f13c51984d63e4fb60f1b4d675876c, type: 2}
 --- !u!114 &893268925
@@ -1624,7 +1627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5e06706c71fa442b3bd4eea7be440b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 180065924}
+  targetObject: {fileID: 932425273}
   duration: 3
   requiredFlag: {fileID: 11400000, guid: 48f13c51984d63e4fb60f1b4d675876c, type: 2}
 --- !u!114 &893268926
@@ -1658,6 +1661,21 @@ MonoBehaviour:
   targetObject: {fileID: 180065923}
   targetPosition: {x: -6, y: -3, z: 0}
   duration: 1.5
+  requiredFlag: {fileID: 11400000, guid: 48f13c51984d63e4fb60f1b4d675876c, type: 2}
+--- !u!114 &893268934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893268921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5e06706c71fa442b3bd4eea7be440b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 1937018978}
+  duration: 3
   requiredFlag: {fileID: 11400000, guid: 48f13c51984d63e4fb60f1b4d675876c, type: 2}
 --- !u!1 &932425273
 GameObject:

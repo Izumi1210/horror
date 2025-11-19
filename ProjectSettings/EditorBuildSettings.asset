@@ -278,4 +278,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Omamori/ririroute/death/ririlive1.unity
     guid: 5cc7cea7cad7a524fb97ef369ece8cdd
+  - enabled: 1
+    path: Assets/Scenes/MiniGameTemplate/Shooting1.unity
+    guid: e23d64e0fa7fa0945bbac1fbbc1217a6
+  - enabled: 1
+    path: Assets/Scenes/MiniGameTemplate/Shooting2.unity
+    guid: 7e871704601cbbe44890ecf581a7d6a8
+  - enabled: 1
+    path: Assets/Scenes/MiniGameTemplate/Shooting3.unity
+    guid: bcf36391b534c5d4eb6bf43100c5e93c
+  - enabled: 1
+    path: Assets/Scenes/MiniGameTemplate/Shooting4.unity
+    guid: d66b3cae5ead98942a1d09fea83d4509
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi15.unity
+    guid: 9a0557998fc9ed94e8235497469ce52c
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi16.unity
+    guid: f7b1e223441ced347befce61bac022c2
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi17.unity
+    guid: 909d38bdfe3e2334dae4158538243015
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi18.unity
+    guid: 59a2494b5297e1c4ba19c9e8d938656d
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi20.unity
+    guid: ca6267cf96126d7419c7089c0465e4fc
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorakana/kanade4.unity
+    guid: 97962933591e20248adc89e406989662
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorakana/kanade5.unity
+    guid: d1b2bb40f94196f4d973975c5d4bf92d
+  - enabled: 1
+    path: Assets/Scenes/Hokora/hokorakana/kanade6.unity
+    guid: 7d95989dfe2add643834f8da537af041
   m_configObjects: {}

@@ -155,6 +155,15 @@ MonoBehaviour:
   audioSource: {fileID: 1934827063}
   conversationNames:
   - chi
+  - chi
+  - chi
+  - chi
+  - chi
+  - chi
+  - chi
+  - chi
+  - chi
+  - chi
   soundEffectsPerConversation: []
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []

@@ -46,6 +46,8 @@ public class ShootingController : MonoBehaviour
     [Header("ゲームオーバー時に遷移するシーン")]
     [SerializeField] string gameOverSceneName;
 
+    [Header("クリア時に遷移するシーン")]
+    [SerializeField] string ClearSceneName;
     void Start()
     {
         RefreshEnemyBoard();    // 敵の初期化
@@ -164,5 +166,6 @@ public class ShootingController : MonoBehaviour
         TimerUpdate();
         RefreshEnemyBoard();
         Debug.Log("ミニゲームクリア");
+        SceneManager.LoadScene(ClearSceneName);
     }
 }
