@@ -2100,6 +2100,7 @@ GameObject:
   - component: {fileID: 2008205632}
   - component: {fileID: 2008205631}
   - component: {fileID: 2008205630}
+  - component: {fileID: 2008205633}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2157,6 +2158,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2008205633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008205629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82d890c850858c44a282246230248ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2054717724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,8 +2234,8 @@ MonoBehaviour:
   - {fileID: 1956758149}
   - {fileID: 299511309}
   - {fileID: 1344052151}
-  gameTimeLimit: 60
-  remainingTime: 60
+  gameTimeLimit: 30
+  remainingTime: 30
   timeNumber: {fileID: 473993925}
   gameOverSceneName: GameOver
   ClearSceneName: asahi7

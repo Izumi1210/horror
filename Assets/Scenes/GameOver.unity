@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: 1024
+  trigger: 16
   delayOneFrame: 0
   condition:
     luaConditions: []
@@ -673,7 +673,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: sentaku
+  conversation: GameOver
   conversationConversant: {fileID: 902762338}
   conversationActor: {fileID: 902762338}
   startConversationEntryID: -1

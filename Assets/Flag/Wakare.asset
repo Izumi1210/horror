@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81a695335a5a1a46b88ee1ad8af6255, type: 3}
   m_Name: Wakare
   m_EditorClassIdentifier: 
-  isOn: 0
+  isOn: 1

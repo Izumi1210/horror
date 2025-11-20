@@ -314,4 +314,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hokora/hokorakana/kanade6.unity
     guid: 7d95989dfe2add643834f8da537af041
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi14.unity
+    guid: 92f5ce3d9fb3a8b48b3957cbab9114a6
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive9_shikoku.unity
+    guid: 2b24e7b08f11ba64388d010d8f70a38b
+  - enabled: 1
+    path: Assets/Scenes/Hokora/box_yuyu0.unity
+    guid: 191527934f6741e4a952487f3a4c8d51
+  - enabled: 1
+    path: Assets/Scenes/Omamori/ririroute/live/ririlive7_shikoku 0.unity
+    guid: b664c6cdb94e16246aa45ee91b7e9776
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi10.unity
+    guid: 272313a80829b8d4da3dbb1fa6859a0a
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi11.unity
+    guid: a7e19448f7bd2714fb80a032e585fb15
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi11 2.unity
+    guid: ee191794e7e961d44b30205beadbb6ad
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi12.unity
+    guid: 164ca4445d2b48a47b9ce394950fc17d
+  - enabled: 1
+    path: Assets/Scenes/Yuukai/asahi13.unity
+    guid: 21c54a1d6cc6d77448d851a637ea2113
   m_configObjects: {}

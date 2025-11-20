@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using PixelCrushers.DialogueSystem;  // ← 追加（必須）
 
 public class TextMatchSceneControllerTMP : MonoBehaviour
 {
@@ -24,9 +25,23 @@ public class TextMatchSceneControllerTMP : MonoBehaviour
         // 正解判定
         if (text1.text == correct1 && text2.text == correct2 && text3.text == correct3)
         {
-            Debug.Log("✅ 正解！シーン遷移します");
+            Debug.Log("✅ 正解！会話を終了してシーン遷移します");
             isCleared = true;
-            SceneManager.LoadScene(nextSceneName);
+
+            // 会話を安全に停止してからシーン遷移する
+            StartCoroutine(EndConversationAndLoadScene());
         }
+    }
+
+    private System.Collections.IEnumerator EndConversationAndLoadScene()
+    {
+        // ① 会話を停止
+        DialogueManager.StopConversation();
+
+        // ② 内部状態が終了するまで 1フレーム待つ（必要）
+        yield return null;
+
+        // ③ シーン遷移
+        SceneManager.LoadScene(nextSceneName);
     }
 }

@@ -336,9 +336,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1917419749}
   conversationNames:
-  - sentaku4
+  - sorry
+  - sorry
+  - sorry
+  - sorry
+  - sorry
+  - sorry
+  - sorry
+  - sorry
+  - sorry
+  - sorry
   soundEffectsPerConversation:
-  - {fileID: 8300000, guid: 13304e22845827a42a872b712607d743, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
+  - {fileID: 8300000, guid: 62ae9d4f3c533dd4e82b9e60379e0b12, type: 3}
   dialogueUIsPerConversation: []
   requiredFlagsPerConversation: []
 --- !u!114 &279536429
