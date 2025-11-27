@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [RequireComponent(typeof(GenerateOrbs))]
 [RequireComponent(typeof(PuzzleScoreController))]
@@ -35,6 +34,7 @@ public class PuzzleGameController : MonoBehaviour
     public float timeLimit = 60f;
     [Header("クリアに必要なスコア")]
     public int clearScore = 1000000;
+    [SerializeField] GameObject startCanvas;
 
     GenerateOrbs generateOrbs;
     PuzzleScoreController puzzleScoreController;
@@ -42,7 +42,7 @@ public class PuzzleGameController : MonoBehaviour
 
     bool isErasing = false;
 
-    private void Start()
+    void Start()
     {
         // コンポーネントの取得
         generateOrbs = GetComponent<GenerateOrbs>();
@@ -55,6 +55,14 @@ public class PuzzleGameController : MonoBehaviour
         if (puzzleTimeController == null)
             Debug.LogError("PuzzleTimeControllerコンポーネントが見つかりません。");
 
+        isPlayable = false;
+        isInProgress = false;
+
+        startCanvas.SetActive(true);
+    }
+
+    public void GameStart()
+    {
         // ボードの初期化
         board = generateOrbs.InitializeBoard();
         //4つ以上繋がっているオーブがないことを確認し、もしあれば色を変える
@@ -84,10 +92,10 @@ public class PuzzleGameController : MonoBehaviour
         // オーブの規定の位置を取得
         prescribedOrbPos = generateOrbs.GetPrescribedOrbPosition();
 
-        StartCoroutine(GameStart());
+        StartCoroutine(StartEvent());
     }
 
-    public IEnumerator GameStart()
+    public IEnumerator StartEvent()
     {
         // オーブを落とす
         yield return StartCoroutine(OrbDropOnGameStart());
@@ -95,6 +103,7 @@ public class PuzzleGameController : MonoBehaviour
 
         Debug.Log("ゲームスタート");
         isInProgress = true;
+        isPlayable = true;
         puzzleTimeController.StartTimer();
     }
 
