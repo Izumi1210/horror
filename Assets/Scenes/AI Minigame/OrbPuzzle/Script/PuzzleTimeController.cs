@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class PuzzleTimeController : MonoBehaviour
 {
-    [Header("制限時間")]
-    [SerializeField] float gameTimeLimit = 20.0f;
-    [Header("ミニゲームの残り時間")]
-    [SerializeField] float remainingTime = 20.0f;
     [Header("時間の表示")]
     [SerializeField] TextMeshProUGUI timeNumber;
+
+    // ゲームの制限時間
+    float gameTimeLimit;
+    // 残り時間
+    float remainingTime;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class PuzzleTimeController : MonoBehaviour
 
     IEnumerator PuzzleTimerCoroutine()
     {
+        gameTimeLimit = PuzzleGameController.instance.timeLimit;
         remainingTime = gameTimeLimit;
         while (remainingTime > 0)
         {

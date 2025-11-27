@@ -22,15 +22,17 @@ public class PuzzleGameController : MonoBehaviour
     }
 
     public Orb[][] board;
-    public Vector2[][] prescribedOrbPos;
+    public Vector2[,] prescribedOrbPos;
     public bool isPlayable = true;
     public bool isInProgress = true;
     [Header("いくつオーブが繋がったら消えるか")]
-    [SerializeField] int eraseCount = 4;
+    public int eraseCount = 4;
     [Header("オーブが落ちる速度")]
     public float dropSpeed = 1f;
     [Header("オーブが何かの間違いで落ち切らなかった時に強制的に落とすまでの時間")]
     public float forceDropDelay = 3f;
+    [Header("制限時間")]
+    public float timeLimit = 60f;
     [Header("クリアに必要なスコア")]
     public int clearScore = 1000000;
 
@@ -42,6 +44,7 @@ public class PuzzleGameController : MonoBehaviour
 
     private void Start()
     {
+        // コンポーネントの取得
         generateOrbs = GetComponent<GenerateOrbs>();
         puzzleScoreController = GetComponent<PuzzleScoreController>();
         puzzleTimeController = GetComponent<PuzzleTimeController>();
@@ -54,21 +57,42 @@ public class PuzzleGameController : MonoBehaviour
 
         // ボードの初期化
         board = generateOrbs.InitializeBoard();
-        prescribedOrbPos = new Vector2[board.Length][];
-        for (int x = 0; x < board.Length; x++)
+        //4つ以上繋がっているオーブがないことを確認し、もしあれば色を変える
+        while (true)
         {
-            prescribedOrbPos[x] = new Vector2[board[x].Length];
-            for (int y = 0; y < board[x].Length; y++)
+            bool hasConnectedOrbs = false;
+            for (int x = 0; x < board.Length; x++)
             {
-                prescribedOrbPos[x][y] = board[x][y].gameObject.transform.position;
-            }
-        }
+                if (hasConnectedOrbs) break;
+                for (int y = 0; y < board[x].Length; y++)
+                    if (board[x][y] != null)
+                    {
+                        List<Orb> connectedOrbs = board[x][y].GetConnectedOrb();
+                        if (connectedOrbs.Count >= PuzzleGameController.instance.eraseCount)
+                        {
+                            hasConnectedOrbs = true;
+                            //4つ以上繋がっているオーブがあったので色を変える
+                            Debug.Log("4つ以上繋がっているオーブがあったので色を変えた");
+                            board = generateOrbs.ChangeOrbColor(board, x, y);
+                        }
 
-        GameStart();
+                    }
+            }
+            if (!hasConnectedOrbs) break; //4つ以上繋がっているオーブがなければループを抜ける
+            Debug.Log("4つ以上繋がっているオーブがあったので再度チェックする");
+        }
+        // オーブの規定の位置を取得
+        prescribedOrbPos = generateOrbs.GetPrescribedOrbPosition();
+
+        StartCoroutine(GameStart());
     }
 
-    public void GameStart()
+    public IEnumerator GameStart()
     {
+        // オーブを落とす
+        yield return StartCoroutine(OrbDropOnGameStart());
+
+
         Debug.Log("ゲームスタート");
         isInProgress = true;
         puzzleTimeController.StartTimer();
@@ -211,7 +235,7 @@ public class PuzzleGameController : MonoBehaviour
                 {
                     int x = movingOrb.pos[0];
                     int y = movingOrb.pos[1];
-                    Vector2 targetPos = prescribedOrbPos[x][y-1];
+                    Vector2 targetPos = prescribedOrbPos[x,y-1];
                     if (Vector2.Distance(movingOrb.transform.position, targetPos) > 0.01f && duration < forceDropDelay)
                     {
                         movingOrb.transform.position = Vector2.MoveTowards(movingOrb.transform.position, targetPos, dropSpeed * Time.deltaTime);
@@ -238,5 +262,33 @@ public class PuzzleGameController : MonoBehaviour
     }
 
 
+    IEnumerator OrbDropOnGameStart()
+    {
+        float duration = 0f;
+        //生成したオーブを落とす
+        while (true)
+        {
+            yield return null;
+            bool allLanded = true;
+            duration += Time.deltaTime;
+            for (int x = 0; x < board.Length; x++)
+            {
+                for (int y = 0; y < board[x].Length; y++)
+                {
+                    Orb movingOrb = board[x][y];
+                    Vector2 targetPos = prescribedOrbPos[x, y];
+                    if (Vector2.Distance(movingOrb.transform.position, targetPos) > 0.01f && duration < forceDropDelay)
+                    {
+                        movingOrb.transform.position = Vector2.MoveTowards(movingOrb.transform.position, targetPos, dropSpeed * Time.deltaTime);
+                        allLanded = false;
+                    }
+                    else
+                        movingOrb.transform.position = targetPos;
+                }
+            }
 
+            // すべてのオーブが着地したら終了
+            if (allLanded) break;
+        }
+    }
 }

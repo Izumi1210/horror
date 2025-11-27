@@ -2548,6 +2548,7 @@ MonoBehaviour:
   blueOrbPrefab: {fileID: 4786643314016603653, guid: 67576442f70cfc64aae283c81fed43f3, type: 3}
   greenOrbPrefab: {fileID: 2224405571030948591, guid: 8df459dd2da0bc640a323e141742a58a, type: 3}
   yellowOrbPrefab: {fileID: 4114233146155615712, guid: 1e1cd2a46e6959d4780ebcabe95b2287, type: 3}
+  purpleOrbPrefab: {fileID: 4114233146155615712, guid: 6faea94c795a9584aab856ffc7354a07, type: 3}
   orbPositionsX:
   - {fileID: 173688675}
   - {fileID: 1714745232}
@@ -2599,6 +2600,7 @@ MonoBehaviour:
   eraseCount: 4
   dropSpeed: 10
   forceDropDelay: 5
+  timeLimit: 60
   clearScore: 300000
 --- !u!4 &572245300
 Transform:
@@ -2645,8 +2647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1622e0acd4995741b66e633a97cac19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimeLimit: 20
-  remainingTime: 20
   timeNumber: {fileID: 436573787}
 --- !u!1001 &585552194
 PrefabInstance:
@@ -6090,7 +6090,7 @@ Transform:
   m_GameObject: {fileID: 1475766946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.5, z: 0}
+  m_LocalPosition: {x: 0, y: 9.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

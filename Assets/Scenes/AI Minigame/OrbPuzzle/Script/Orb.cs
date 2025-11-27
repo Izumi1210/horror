@@ -12,10 +12,10 @@ public class Orb : MonoBehaviour, IPointerClickHandler
         Red = 1,
         Blue = 2,
         Green = 3,
-        Yellow = 4
+        Yellow = 4,
+        Purple = 5
     }
-    [SerializeField] OrbColor orbColor;
-    [SerializeField] float dropSpeed;
+    public OrbColor orbColor;
     
     public int[] pos = new int[2];
 
