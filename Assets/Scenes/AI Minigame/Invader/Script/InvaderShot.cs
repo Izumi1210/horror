@@ -10,4 +10,8 @@ public class InvaderShot : MonoBehaviour
     {
         transform.Translate(Vector3.up * speed * Time.fixedDeltaTime);
     }
+    void OnTriggerEnter2D()
+    {
+        Destroy(this.gameObject);
+    }
 }
