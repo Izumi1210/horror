@@ -16,12 +16,15 @@ public class InvaderShotButton : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData _eventData)
     {
-        Instantiate(invaderShot, shotPoint.position, Quaternion.identity);
-        StartCoroutine(ShotRoutine());
+        GameObject nextBullet = InvaderGameController.instance.GetNextAmmo();
+        if (nextBullet != null){
+            Instantiate(nextBullet, shotPoint.position, Quaternion.identity);
+        }
+        StartCoroutine(PushedRoutine());
     }
 
 
-    IEnumerator ShotRoutine()
+    IEnumerator PushedRoutine()
     {
         ChangePushedState(true);
         
