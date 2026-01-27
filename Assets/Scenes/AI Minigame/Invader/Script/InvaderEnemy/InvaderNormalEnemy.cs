@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ public class InvaderNormalEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // ƒQ[ƒ€‚ªis’†‚Å‚È‚¯‚ê‚Î©•ª©g‚ğ”j‰ó
+        // ã‚²ãƒ¼ãƒ ãŒé€²è¡Œä¸­ã§ãªã‘ã‚Œã°è‡ªåˆ†è‡ªèº«ã‚’ç ´å£Š
         if (!InvaderGameController.instance.isInProgress)
             DestroyThis();
 
@@ -32,7 +32,7 @@ public class InvaderNormalEnemy : MonoBehaviour
     }
 
     /// <summary>
-    /// ”j‰ó‚³‚ê‚é‚Æ‚«‚Ìˆ—
+    /// ç ´å£Šã•ã‚Œã‚‹ã¨ãã®å‡¦ç†
     /// </summary>
     private void DestroyThis()
     {
@@ -42,13 +42,13 @@ public class InvaderNormalEnemy : MonoBehaviour
 
     void OnTriggerEnter2D()
     {
-        // ŠÈˆÕ“I‚ÈƒQ[ƒ€‚È‚Ì‚ÅAÕ“Ë‚µ‚½‚ç•K‚¸ƒvƒŒƒCƒ„[‚Ì’e‚Æ”»’è‚·‚é
+        // ç°¡æ˜“çš„ãªã‚²ãƒ¼ãƒ ãªã®ã§ã€è¡çªã—ãŸã‚‰å¿…ãšãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å¼¾ã¨åˆ¤å®šã™ã‚‹
         OnHitByPlayerBullet();
     }
 
     public void OnHitByPlayerBullet()
     {
-        // “G‚ª’e‚É“–‚½‚Á‚½‚Æ‚«‚Ìˆ—
+        // æ•µãŒå¼¾ã«å½“ãŸã£ãŸã¨ãã®å‡¦ç†
         DestroyThis();
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ public class InvaderAmmoReloader : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // ƒQ[ƒ€is’†‚Å‚È‚¯‚ê‚ÎƒŠƒ^[ƒ“
+        // ã‚²ãƒ¼ãƒ é€²è¡Œä¸­ã§ãªã‘ã‚Œã°ãƒªã‚¿ãƒ¼ãƒ³
         if (!InvaderGameController.instance.isInProgress)
             return;
 

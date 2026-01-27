@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,7 +8,7 @@ public class InvaderShotButton : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] GameObject invaderShot;
     [SerializeField] Transform shotPoint;
-    [Header("ƒ{ƒ^ƒ“ƒAƒjƒ[ƒVƒ‡ƒ“—p")]
+    [Header("ãƒœã‚¿ãƒ³ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ç”¨")]
     [SerializeField] GameObject buttonNormal;
     [SerializeField] GameObject buttonPushed;
 

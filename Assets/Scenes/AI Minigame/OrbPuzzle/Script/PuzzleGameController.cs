@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,15 +24,15 @@ public class PuzzleGameController : MonoBehaviour
     public Vector2[,] prescribedOrbPos;
     public bool isPlayable = false;
     public bool isInProgress = false;
-    [Header("‚¢‚­‚ÂƒI[ƒu‚ªŒq‚ª‚Á‚½‚çÁ‚¦‚é‚©")]
+    [Header("ã„ãã¤ã‚ªãƒ¼ãƒ–ãŒç¹‹ãŒã£ãŸã‚‰æ¶ˆãˆã‚‹ã‹")]
     public int eraseCount = 4;
-    [Header("ƒI[ƒu‚ª—‚¿‚é‘¬“x")]
+    [Header("ã‚ªãƒ¼ãƒ–ãŒè½ã¡ã‚‹é€Ÿåº¦")]
     public float dropSpeed = 1f;
-    [Header("ƒI[ƒu‚ª‰½‚©‚ÌŠÔˆá‚¢‚Å—‚¿Ø‚ç‚È‚©‚Á‚½‚É‹­§“I‚É—‚Æ‚·‚Ü‚Å‚ÌŠÔ")]
+    [Header("ã‚ªãƒ¼ãƒ–ãŒä½•ã‹ã®é–“é•ã„ã§è½ã¡åˆ‡ã‚‰ãªã‹ã£ãŸæ™‚ã«å¼·åˆ¶çš„ã«è½ã¨ã™ã¾ã§ã®æ™‚é–“")]
     public float forceDropDelay = 3f;
-    [Header("§ŒÀŠÔ")]
+    [Header("åˆ¶é™æ™‚é–“")]
     public float timeLimit = 60f;
-    [Header("ƒNƒŠƒA‚É•K—v‚ÈƒXƒRƒA")]
+    [Header("ã‚¯ãƒªã‚¢ã«å¿…è¦ãªã‚¹ã‚³ã‚¢")]
     public int clearScore = 1000000;
     [SerializeField] GameObject startCanvas;
 
@@ -44,16 +44,16 @@ public class PuzzleGameController : MonoBehaviour
 
     void Start()
     {
-        // ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìæ“¾
+        // ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å–å¾—
         generateOrbs = GetComponent<GenerateOrbs>();
         puzzleScoreController = GetComponent<PuzzleScoreController>();
         puzzleTimeController = GetComponent<PuzzleTimeController>();
         if (generateOrbs == null)
-            Debug.LogError("GenerateOrbsƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+            Debug.LogError("GenerateOrbsã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
         if (puzzleScoreController == null)
-            Debug.LogError("PuzzleScoreControllerƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+            Debug.LogError("PuzzleScoreControllerã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
         if (puzzleTimeController == null)
-            Debug.LogError("PuzzleTimeControllerƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+            Debug.LogError("PuzzleTimeControllerã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
 
         isPlayable = false;
         isInProgress = false;
@@ -63,9 +63,9 @@ public class PuzzleGameController : MonoBehaviour
 
     public void GameStart()
     {
-        // ƒ{[ƒh‚Ì‰Šú‰»
+        // ãƒœãƒ¼ãƒ‰ã®åˆæœŸåŒ–
         board = generateOrbs.InitializeBoard();
-        //4‚ÂˆÈãŒq‚ª‚Á‚Ä‚¢‚éƒI[ƒu‚ª‚È‚¢‚±‚Æ‚ğŠm”F‚µA‚à‚µ‚ ‚ê‚ÎF‚ğ•Ï‚¦‚é
+        //4ã¤ä»¥ä¸Šç¹‹ãŒã£ã¦ã„ã‚‹ã‚ªãƒ¼ãƒ–ãŒãªã„ã“ã¨ã‚’ç¢ºèªã—ã€ã‚‚ã—ã‚ã‚Œã°è‰²ã‚’å¤‰ãˆã‚‹
         while (true)
         {
             bool hasConnectedOrbs = false;
@@ -79,17 +79,17 @@ public class PuzzleGameController : MonoBehaviour
                         if (connectedOrbs.Count >= PuzzleGameController.instance.eraseCount)
                         {
                             hasConnectedOrbs = true;
-                            //4‚ÂˆÈãŒq‚ª‚Á‚Ä‚¢‚éƒI[ƒu‚ª‚ ‚Á‚½‚Ì‚ÅF‚ğ•Ï‚¦‚é
-                            Debug.Log("4‚ÂˆÈãŒq‚ª‚Á‚Ä‚¢‚éƒI[ƒu‚ª‚ ‚Á‚½‚Ì‚ÅF‚ğ•Ï‚¦‚½");
+                            //4ã¤ä»¥ä¸Šç¹‹ãŒã£ã¦ã„ã‚‹ã‚ªãƒ¼ãƒ–ãŒã‚ã£ãŸã®ã§è‰²ã‚’å¤‰ãˆã‚‹
+                            Debug.Log("4ã¤ä»¥ä¸Šç¹‹ãŒã£ã¦ã„ã‚‹ã‚ªãƒ¼ãƒ–ãŒã‚ã£ãŸã®ã§è‰²ã‚’å¤‰ãˆãŸ");
                             board = generateOrbs.ChangeOrbColor(board, x, y);
                         }
 
                     }
             }
-            if (!hasConnectedOrbs) break; //4‚ÂˆÈãŒq‚ª‚Á‚Ä‚¢‚éƒI[ƒu‚ª‚È‚¯‚ê‚Îƒ‹[ƒv‚ğ”²‚¯‚é
-            Debug.Log("4‚ÂˆÈãŒq‚ª‚Á‚Ä‚¢‚éƒI[ƒu‚ª‚ ‚Á‚½‚Ì‚ÅÄ“xƒ`ƒFƒbƒN‚·‚é");
+            if (!hasConnectedOrbs) break; //4ã¤ä»¥ä¸Šç¹‹ãŒã£ã¦ã„ã‚‹ã‚ªãƒ¼ãƒ–ãŒãªã‘ã‚Œã°ãƒ«ãƒ¼ãƒ—ã‚’æŠœã‘ã‚‹
+            Debug.Log("4ã¤ä»¥ä¸Šç¹‹ãŒã£ã¦ã„ã‚‹ã‚ªãƒ¼ãƒ–ãŒã‚ã£ãŸã®ã§å†åº¦ãƒã‚§ãƒƒã‚¯ã™ã‚‹");
         }
-        // ƒI[ƒu‚Ì‹K’è‚ÌˆÊ’u‚ğæ“¾
+        // ã‚ªãƒ¼ãƒ–ã®è¦å®šã®ä½ç½®ã‚’å–å¾—
         prescribedOrbPos = generateOrbs.GetPrescribedOrbPosition();
 
         StartCoroutine(StartEvent());
@@ -97,11 +97,11 @@ public class PuzzleGameController : MonoBehaviour
 
     public IEnumerator StartEvent()
     {
-        // ƒI[ƒu‚ğ—‚Æ‚·
+        // ã‚ªãƒ¼ãƒ–ã‚’è½ã¨ã™
         yield return StartCoroutine(OrbDropOnGameStart());
 
 
-        Debug.Log("ƒQ[ƒ€ƒXƒ^[ƒg");
+        Debug.Log("ã‚²ãƒ¼ãƒ ã‚¹ã‚¿ãƒ¼ãƒˆ");
         isInProgress = true;
         isPlayable = true;
         puzzleTimeController.StartTimer();
@@ -124,19 +124,19 @@ public class PuzzleGameController : MonoBehaviour
 
         if (puzzleScoreController.currentScore >= clearScore)
         {
-            // ¬Œ÷ˆ—
-            Debug.Log("¬Œ÷");
+            // æˆåŠŸå‡¦ç†
+            Debug.Log("æˆåŠŸ");
         }
         else
         {
-            // ¸”sˆ—
-            Debug.Log("¸”s");
+            // å¤±æ•—å‡¦ç†
+            Debug.Log("å¤±æ•—");
         }
     }
 
 
     /// <summary>
-    /// ‘ÎÛ‚ÌˆÊ’u‚ªƒ{[ƒh“à‚ÅƒI[ƒu‚ª‚ ‚é‚©‚Ç‚¤‚©‚ğŠm”F‚·‚é
+    /// å¯¾è±¡ã®ä½ç½®ãŒãƒœãƒ¼ãƒ‰å†…ã§ã‚ªãƒ¼ãƒ–ãŒã‚ã‚‹ã‹ã©ã†ã‹ã‚’ç¢ºèªã™ã‚‹
     /// </summary>
     /// <param name="x"></param>
     /// <param name="y"></param>
@@ -152,31 +152,31 @@ public class PuzzleGameController : MonoBehaviour
         isPlayable = false;
         int comboCount = 0;
 
-        // ƒI[ƒu‚ªÁ‚¦‘±‚¯‚éŒÀ‚èƒ‹[ƒv
+        // ã‚ªãƒ¼ãƒ–ãŒæ¶ˆãˆç¶šã‘ã‚‹é™ã‚Šãƒ«ãƒ¼ãƒ—
         while (eraseOrbs.Count > 0)
         {
             comboCount++;
-            // ƒXƒRƒA‚ğ‰ÁZ
+            // ã‚¹ã‚³ã‚¢ã‚’åŠ ç®—
             int erasedOrbCount = eraseOrbs.Count;
             int addScore = puzzleScoreController.CalculateScore(erasedOrbCount, comboCount);
             puzzleScoreController.AddScore(addScore);
 
-            // ƒI[ƒu‚ğÁ‚·
+            // ã‚ªãƒ¼ãƒ–ã‚’æ¶ˆã™
             foreach (Orb eraseOrb in eraseOrbs)
             {
                 int[] pos = eraseOrb.pos;
                 board[pos[0]][pos[1]] = null;
                 Destroy(eraseOrb.gameObject);
             }
-            // ƒI[ƒu‚ğ—‚Æ‚·
+            // ã‚ªãƒ¼ãƒ–ã‚’è½ã¨ã™
             yield return StartCoroutine(DropOrbs());
-            // ”Õ–Ê‚ğƒ`ƒFƒbƒN‚µ‚ÄAÁ‚¹‚éƒI[ƒu‚ª‚ ‚ê‚ÎÁ‚·
+            // ç›¤é¢ã‚’ãƒã‚§ãƒƒã‚¯ã—ã¦ã€æ¶ˆã›ã‚‹ã‚ªãƒ¼ãƒ–ãŒã‚ã‚Œã°æ¶ˆã™
             eraseOrbs = CheckBoard();
             if (eraseOrbs.Count == 0)
             {
-                // ˆê’Ê‚èƒI[ƒu‚ªÁ‚¦I‚í‚Á‚½‚çV‚µ‚¢ƒI[ƒu‚ğ¶¬
+                // ä¸€é€šã‚Šã‚ªãƒ¼ãƒ–ãŒæ¶ˆãˆçµ‚ã‚ã£ãŸã‚‰æ–°ã—ã„ã‚ªãƒ¼ãƒ–ã‚’ç”Ÿæˆ
                 yield return StartCoroutine(generateOrbs.GenerateNewOrbs());
-                // ¶¬Œã‚ÉÄ“x”Õ–Ê‚ğƒ`ƒFƒbƒN
+                // ç”Ÿæˆå¾Œã«å†åº¦ç›¤é¢ã‚’ãƒã‚§ãƒƒã‚¯
                 eraseOrbs = CheckBoard();
             }
         }
@@ -187,7 +187,7 @@ public class PuzzleGameController : MonoBehaviour
 
     public List<Orb> CheckBoard()
     {
-        // Á‚·ƒI[ƒu‚ğƒŠƒXƒgƒAƒbƒv
+        // æ¶ˆã™ã‚ªãƒ¼ãƒ–ã‚’ãƒªã‚¹ãƒˆã‚¢ãƒƒãƒ—
         List<Orb> eraseOrbs = new List<Orb>();
         bool[,] visited = new bool[board.Length, board[0].Length];
         for (int x = 0; x < board.Length; x++)
@@ -210,7 +210,7 @@ public class PuzzleGameController : MonoBehaviour
         while (true)
         {
             movingOrbs.Clear();
-            // —‚¿‚é‘S‚Ä‚ÌƒI[ƒu‚ğƒŠƒXƒgƒAƒbƒv
+            // è½ã¡ã‚‹å…¨ã¦ã®ã‚ªãƒ¼ãƒ–ã‚’ãƒªã‚¹ãƒˆã‚¢ãƒƒãƒ—
             for (int x = 0; x < board.Length; x++)
             {
                 bool hasEmpty = false;
@@ -225,7 +225,7 @@ public class PuzzleGameController : MonoBehaviour
                         if (board[x][y] != null) movingOrbs.Add(board[x][y]);
                 }
             }
-            // —‚¿‚éƒI[ƒu‚ª‚¢‚È‚¯‚ê‚ÎI—¹
+            // è½ã¡ã‚‹ã‚ªãƒ¼ãƒ–ãŒã„ãªã‘ã‚Œã°çµ‚äº†
             if (movingOrbs.Count == 0)
             {
                 //Debug.Log("No more orbs to drop. Exiting drop loop.");
@@ -234,7 +234,7 @@ public class PuzzleGameController : MonoBehaviour
             //Debug.Log("Dropping " + movingOrbs.Count + " orbs.");
 
             float duration = 0f;
-            // ƒI[ƒu‚ğˆê’i—‚Æ‚·
+            // ã‚ªãƒ¼ãƒ–ã‚’ä¸€æ®µè½ã¨ã™
             while (true)
             {
                 yield return null;
@@ -254,11 +254,11 @@ public class PuzzleGameController : MonoBehaviour
                         movingOrb.transform.position = targetPos;
                 }
 
-                // ‚·‚×‚Ä‚ÌƒI[ƒu‚ª’…’n‚µ‚½‚çI—¹
+                // ã™ã¹ã¦ã®ã‚ªãƒ¼ãƒ–ãŒç€åœ°ã—ãŸã‚‰çµ‚äº†
                 if (allLanded) break;
             }
 
-            // ƒ{[ƒhî•ñ‚ğXV
+            // ãƒœãƒ¼ãƒ‰æƒ…å ±ã‚’æ›´æ–°
             foreach (Orb movingOrb in movingOrbs)
             {
                 int x = movingOrb.pos[0];
@@ -274,7 +274,7 @@ public class PuzzleGameController : MonoBehaviour
     IEnumerator OrbDropOnGameStart()
     {
         float duration = 0f;
-        //¶¬‚µ‚½ƒI[ƒu‚ğ—‚Æ‚·
+        //ç”Ÿæˆã—ãŸã‚ªãƒ¼ãƒ–ã‚’è½ã¨ã™
         while (true)
         {
             yield return null;
@@ -296,7 +296,7 @@ public class PuzzleGameController : MonoBehaviour
                 }
             }
 
-            // ‚·‚×‚Ä‚ÌƒI[ƒu‚ª’…’n‚µ‚½‚çI—¹
+            // ã™ã¹ã¦ã®ã‚ªãƒ¼ãƒ–ãŒç€åœ°ã—ãŸã‚‰çµ‚äº†
             if (allLanded) break;
         }
     }

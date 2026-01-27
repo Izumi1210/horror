@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,7 +18,7 @@ public class Orb : MonoBehaviour, IPointerClickHandler
 
 
     /// <summary>
-    /// —×Ú‚µ‚Ä‚¢‚é“¯‚¶F‚ÌƒI[ƒu‚ğæ“¾‚·‚é
+    /// éš£æ¥ã—ã¦ã„ã‚‹åŒã˜è‰²ã®ã‚ªãƒ¼ãƒ–ã‚’å–å¾—ã™ã‚‹
     /// </summary>
     /// <returns></returns>
     public Orb[] GetNeighbor()
@@ -28,19 +28,19 @@ public class Orb : MonoBehaviour, IPointerClickHandler
         int y = pos[1];
         Orb[][] board = PuzzleGameController.instance.board;
 
-        // ã
+        // ä¸Š
         if (PuzzleGameController.instance.IsValidPos(x, y - 1) && board[x][y - 1].orbColor == this.orbColor)
             neighbors[0] = board[x][y - 1];
 
-        // ‰E
+        // å³
         if (PuzzleGameController.instance.IsValidPos(x + 1, y) && board[x + 1][y].orbColor == this.orbColor)
             neighbors[1] = board[x + 1][y];
 
-        // ‰º
+        // ä¸‹
         if (PuzzleGameController.instance.IsValidPos(x, y + 1) && board[x][y + 1].orbColor == this.orbColor)
             neighbors[2] = board[x][y + 1];
 
-        // ¶
+        // å·¦
         if (PuzzleGameController.instance.IsValidPos(x - 1, y) && board[x - 1][y].orbColor == this.orbColor)
             neighbors[3] = board[x - 1][y];
 
@@ -49,7 +49,7 @@ public class Orb : MonoBehaviour, IPointerClickHandler
 
 
     /// <summary>
-    /// Œq‚ª‚Á‚Ä‚¢‚é“¯‚¶F‚ÌƒI[ƒu‚ğ‘S‚Äæ“¾‚·‚é
+    /// ç¹‹ãŒã£ã¦ã„ã‚‹åŒã˜è‰²ã®ã‚ªãƒ¼ãƒ–ã‚’å…¨ã¦å–å¾—ã™ã‚‹
     /// </summary>
     /// <param name="connectedList"></param>
     /// <returns></returns>

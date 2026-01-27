@@ -1,26 +1,26 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class InvaderTimeController : MonoBehaviour
 {
-    [Header("ŠÔ‚Ì•\¦")]
+    [Header("æ™‚é–“ã®è¡¨ç¤º")]
     [SerializeField] TextMeshProUGUI timeNumber;
 
-    // ƒQ[ƒ€‚Ì§ŒÀŠÔ
+    // ã‚²ãƒ¼ãƒ ã®åˆ¶é™æ™‚é–“
     float gameTimeLimit;
-    // c‚èŠÔ
+    // æ®‹ã‚Šæ™‚é–“
     float remainingTime;
 
     void Start()
     {
-        TimerUpdate();          // ŠÔ•\¦‚Ì‰Šú‰»
+        TimerUpdate();          // æ™‚é–“è¡¨ç¤ºã®åˆæœŸåŒ–
     }
 
 
     /// <summary>
-    /// ŠÔ‚Ì•\¦‚ğXV‚·‚é
+    /// æ™‚é–“ã®è¡¨ç¤ºã‚’æ›´æ–°ã™ã‚‹
     /// </summary>
     public void TimerUpdate()
     {

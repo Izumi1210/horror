@@ -1,17 +1,17 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class PuzzleScoreController : MonoBehaviour
 {
-    [Header("ƒI[ƒuˆê‚Â‚ÌŠî–{‚Ì“_”")]
+    [Header("ã‚ªãƒ¼ãƒ–ä¸€ã¤ã®åŸºæœ¬ã®ç‚¹æ•°")]
     [SerializeField] int baseScorePerOrb = 100;
-    [Header("“¯Á‚µ”‚ª1‘‚¦‚é‚²‚Æ‚ÉæZ‚³‚ê‚éƒXƒRƒA”{—¦")]
+    [Header("åŒæ™‚æ¶ˆã—æ•°ãŒ1å¢—ãˆã‚‹ã”ã¨ã«ä¹—ç®—ã•ã‚Œã‚‹ã‚¹ã‚³ã‚¢å€ç‡")]
     [SerializeField] float simultaneousBonus = 1.1f;
-    [Header("ƒRƒ“ƒ{”‚ª1‘‚¦‚é‚²‚Æ‚ÉæZ‚³‚ê‚éƒXƒRƒA”{—¦")]
+    [Header("ã‚³ãƒ³ãƒœæ•°ãŒ1å¢—ãˆã‚‹ã”ã¨ã«ä¹—ç®—ã•ã‚Œã‚‹ã‚¹ã‚³ã‚¢å€ç‡")]
     [SerializeField] float comboBonus = 1.2f;
-    [Header("ƒXƒRƒA•\¦—pƒeƒLƒXƒg")]
+    [Header("ã‚¹ã‚³ã‚¢è¡¨ç¤ºç”¨ãƒ†ã‚­ã‚¹ãƒˆ")]
     [SerializeField] TextMeshProUGUI scoreText;
     public int currentScore = 0;
     public int MaxScore = 99999999;
@@ -42,7 +42,7 @@ public class PuzzleScoreController : MonoBehaviour
 
     public int CalculateScore(int erasedOrbCount, int comboCount)
     {
-        // Á‚µ‚½ƒI[ƒu‚Ì”‚ÆƒRƒ“ƒ{‚É‰‚¶‚ÄƒXƒRƒA‚ğŒvZ
+        // æ¶ˆã—ãŸã‚ªãƒ¼ãƒ–ã®æ•°ã¨ã‚³ãƒ³ãƒœã«å¿œã˜ã¦ã‚¹ã‚³ã‚¢ã‚’è¨ˆç®—
         float scoref = baseScorePerOrb * Mathf.Pow(simultaneousBonus, erasedOrbCount)
                                         * Mathf.Pow(comboBonus, comboCount);
         int score = Mathf.FloorToInt(scoref);

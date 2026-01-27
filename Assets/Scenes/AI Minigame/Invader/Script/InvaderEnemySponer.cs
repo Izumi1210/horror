@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +8,11 @@ public class InvaderEnemySponer : MonoBehaviour
     [Serializable]
     class SpawnInfo
     {
-        public GameObject enemyPrefab;  // ƒXƒ|[ƒ“‚·‚é“G‚ÌƒvƒŒƒnƒu
-        public float spawnIntervalMax;  // Å‘åƒXƒ|[ƒ“ŠÔŠu
-        public float spawnIntervalMin;  // Å¬ƒXƒ|[ƒ“ŠÔŠu
-        public float timer;             // ‚±‚Ì“G‚ªƒXƒ|[ƒ“‚·‚é‚Ü‚Å‚ÌŠÔ
-        public bool isSpawnable;        // ‚±‚Ì“G‚ªƒXƒ|[ƒ“‚·‚é‚©‚Ç‚¤‚©
+        public GameObject enemyPrefab;  // ã‚¹ãƒãƒ¼ãƒ³ã™ã‚‹æ•µã®ãƒ—ãƒ¬ãƒãƒ–
+        public float spawnIntervalMax;  // æœ€å¤§ã‚¹ãƒãƒ¼ãƒ³é–“éš”
+        public float spawnIntervalMin;  // æœ€å°ã‚¹ãƒãƒ¼ãƒ³é–“éš”
+        public float timer;             // ã“ã®æ•µãŒã‚¹ãƒãƒ¼ãƒ³ã™ã‚‹ã¾ã§ã®æ™‚é–“
+        public bool isSpawnable;        // ã“ã®æ•µãŒã‚¹ãƒãƒ¼ãƒ³ã™ã‚‹ã‹ã©ã†ã‹
         public SpawnInfo(GameObject _prefab, float _intervalMax,float _intervalMin, bool _isSpawnable)
         {
             enemyPrefab = _prefab;
@@ -23,15 +23,15 @@ public class InvaderEnemySponer : MonoBehaviour
         }
     }
 
-    [SerializeField] List<SpawnInfo> enemyList; // ƒXƒ|[ƒ“‚·‚é“G‚ÌƒŠƒXƒg
+    [SerializeField] List<SpawnInfo> enemyList; // ã‚¹ãƒãƒ¼ãƒ³ã™ã‚‹æ•µã®ãƒªã‚¹ãƒˆ
 
     private void FixedUpdate()
     {
-        // ƒQ[ƒ€‚ªis’†‚Å‚È‚¯‚ê‚Î‰½‚à‚µ‚È‚¢
+        // ã‚²ãƒ¼ãƒ ãŒé€²è¡Œä¸­ã§ãªã‘ã‚Œã°ä½•ã‚‚ã—ãªã„
         if (!InvaderGameController.instance.isInProgress)
             return;
 
-        // ˆê“x‚É•¡”‚Ì“G‚ªƒXƒ|[ƒ“‚µ‚È‚¢‚æ‚¤‚É‚·‚é
+        // ä¸€åº¦ã«è¤‡æ•°ã®æ•µãŒã‚¹ãƒãƒ¼ãƒ³ã—ãªã„ã‚ˆã†ã«ã™ã‚‹
         bool isSpawnable = true;
 
         foreach (SpawnInfo enemy in enemyList) { 

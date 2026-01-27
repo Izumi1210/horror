@@ -1,18 +1,18 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Orb;
 
 public class GenerateOrbs : MonoBehaviour
 {
-    [Header("ŠeF‚ÌƒI[ƒu‚Ìprefab")]
+    [Header("å„è‰²ã®ã‚ªãƒ¼ãƒ–ã®prefab")]
     [SerializeField] GameObject redOrbPrefab;
     [SerializeField] GameObject blueOrbPrefab;
     [SerializeField] GameObject greenOrbPrefab;
     [SerializeField] GameObject yellowOrbPrefab;
     [SerializeField] GameObject purpleOrbPrefab;
 
-    [Header("Šeƒ}ƒX‚Ì’èˆÊ’u‚ğ¦‚·Transform")]
+    [Header("å„ãƒã‚¹ã®å®šä½ç½®ã‚’ç¤ºã™Transform")]
     [SerializeField] Transform[] orbPositionsX;
     [SerializeField] Transform[] orbPositionsY;
     [SerializeField] Transform[] orbGeneratePositionsX;
@@ -22,7 +22,7 @@ public class GenerateOrbs : MonoBehaviour
     [SerializeField] int boardSizeY = 8;
 
     /// <summary>
-    /// boardSizeX x boardSizeY‚ÌƒI[ƒu‚Ì2ŸŒ³”z—ñ‚ğ‰Šú‰»‚µ‚Ä•Ô‚·
+    /// boardSizeX x boardSizeYã®ã‚ªãƒ¼ãƒ–ã®2æ¬¡å…ƒé…åˆ—ã‚’åˆæœŸåŒ–ã—ã¦è¿”ã™
     /// </summary>
     /// <returns></returns>
     public Orb[][] InitializeBoard()
@@ -39,7 +39,7 @@ public class GenerateOrbs : MonoBehaviour
                 GameObject newOrb = InstantiateOrb(x, y, instantiatePos);
                 board[x][y] = newOrb.GetComponent<Orb>();
                 if (board[x][y] == null)
-                    Debug.LogError("OrbƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+                    Debug.LogError("Orbã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
             }
         }
 
@@ -58,17 +58,17 @@ public class GenerateOrbs : MonoBehaviour
 
 
     /// <summary>
-    /// board‚Ì(x, y)‚ÌƒI[ƒu‚ÌF‚ğ•Ï‚¦‚½Œã‚Ìboard‚ğ•Ô‚·
+    /// boardã®(x, y)ã®ã‚ªãƒ¼ãƒ–ã®è‰²ã‚’å¤‰ãˆãŸå¾Œã®boardã‚’è¿”ã™
     /// </summary>
-    /// <param name="board">ƒI[ƒu‚ªŠÜ‚Ü‚ê‚é“ñŸŒ³”z—ñ</param>
-    /// <param name="x">F‚ğ•Ï‚¦‚éƒI[ƒu‚ÌxÀ•W</param>
-    /// <param name="y">F‚ğ•Ï‚¦‚éƒI[ƒu‚ÌyÀ•W</param>
+    /// <param name="board">ã‚ªãƒ¼ãƒ–ãŒå«ã¾ã‚Œã‚‹äºŒæ¬¡å…ƒé…åˆ—</param>
+    /// <param name="x">è‰²ã‚’å¤‰ãˆã‚‹ã‚ªãƒ¼ãƒ–ã®xåº§æ¨™</param>
+    /// <param name="y">è‰²ã‚’å¤‰ãˆã‚‹ã‚ªãƒ¼ãƒ–ã®yåº§æ¨™</param>
     /// <returns></returns>
     public Orb[][] ChangeOrbColor(Orb[][] board, int x, int y)
     {
         OrbColor oldColor = board[x][y].orbColor;
-        OrbColor newColor = OrbColor.Red;   // ‰¼‚ÉF‚ğŠ„‚è“–‚Ä‚Ä‰Šú‰»
-        // ¡‚ÌF‚Æˆá‚¤F‚É‚·‚é
+        OrbColor newColor = OrbColor.Red;   // ä»®ã«è‰²ã‚’å‰²ã‚Šå½“ã¦ã¦åˆæœŸåŒ–
+        // ä»Šã®è‰²ã¨é•ã†è‰²ã«ã™ã‚‹
         switch (oldColor)
         {
             case OrbColor.Red:
@@ -92,7 +92,7 @@ public class GenerateOrbs : MonoBehaviour
                 break;
         }
 
-        // ŒÃ‚¢ƒI[ƒu‚ğÁ‚µ‚ÄV‚µ‚¢ƒI[ƒu‚ğ¶¬
+        // å¤ã„ã‚ªãƒ¼ãƒ–ã‚’æ¶ˆã—ã¦æ–°ã—ã„ã‚ªãƒ¼ãƒ–ã‚’ç”Ÿæˆ
         Destroy(board[x][y].gameObject);
         Vector2 instantiatePos = new Vector2(orbGeneratePositionsX[x].position.x, orbGeneratePositionsY[y].position.y);
         GameObject newOrb = Instantiate(
@@ -113,19 +113,19 @@ public class GenerateOrbs : MonoBehaviour
         newOrb.GetComponent<Orb>().pos[1] = y;
         board[x][y] = newOrb.GetComponent<Orb>();
         if (board[x][y] == null)
-            Debug.LogError("OrbƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+            Debug.LogError("Orbã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
 
         return board;
     }
 
     /// <summary>
-    /// board“à‚Å‘«‚è‚È‚­‚È‚Á‚½•ª‚ÌƒI[ƒu‚ğ¶¬‚µ‚Ä—‚Æ‚·
+    /// boardå†…ã§è¶³ã‚Šãªããªã£ãŸåˆ†ã®ã‚ªãƒ¼ãƒ–ã‚’ç”Ÿæˆã—ã¦è½ã¨ã™
     /// </summary>
     /// <returns></returns>
     public IEnumerator GenerateNewOrbs()
     {
         Orb[][] board = PuzzleGameController.instance.board;
-        // ‚¢‚­‚ÂƒI[ƒu‚ğ¶¬‚·‚é‚©Œˆ‚ß‚é
+        // ã„ãã¤ã‚ªãƒ¼ãƒ–ã‚’ç”Ÿæˆã™ã‚‹ã‹æ±ºã‚ã‚‹
         int[] generateNum = new int[boardSizeX];
         for (int i = 0; i < boardSizeX; i++)
             generateNum[i] = 0;
@@ -140,19 +140,19 @@ public class GenerateOrbs : MonoBehaviour
             }
         }
         
-        // ƒI[ƒu‚ğ¶¬‚·‚é
+        // ã‚ªãƒ¼ãƒ–ã‚’ç”Ÿæˆã™ã‚‹
         List<Orb> generatedOrbs = new List<Orb>();
         for(int x = 0; x < boardSizeX; x++)
         {
-            // generateNum[x]ŒÂ•ªƒI[ƒu‚ğ¶¬‚µ‚Äboard‚É’Ç‰Á‚µ‚Ä‚µ‚Ü‚¤
-            // ‚½‚¾‚µ‹ó’†‚É¶¬‚·‚é‚Ì‚ÅAˆÊ’u‚ÍorbGeneratePositions‚©‚çæ‚é
+            // generateNum[x]å€‹åˆ†ã‚ªãƒ¼ãƒ–ã‚’ç”Ÿæˆã—ã¦boardã«è¿½åŠ ã—ã¦ã—ã¾ã†
+            // ãŸã ã—ç©ºä¸­ã«ç”Ÿæˆã™ã‚‹ã®ã§ã€ä½ç½®ã¯orbGeneratePositionsã‹ã‚‰å–ã‚‹
             for (int y = boardSizeY - generateNum[x]; y < boardSizeY; y++)
             {
                 Vector2 instantiatePos = new Vector2(orbGeneratePositionsX[x].position.x, orbGeneratePositionsY[y - boardSizeY + generateNum[x]].position.y);
                 GameObject newOrb = InstantiateOrb(x, y, instantiatePos);
                 board[x][y] = newOrb.GetComponent<Orb>();
                 if (board[x][y] == null)
-                    Debug.LogError("OrbƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+                    Debug.LogError("Orbã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
                 generatedOrbs.Add(board[x][y]);
             }
         }
@@ -161,7 +161,7 @@ public class GenerateOrbs : MonoBehaviour
         Vector2[,] prescribedOrbPos = PuzzleGameController.instance.prescribedOrbPos;
         float dropSpeed = PuzzleGameController.instance.dropSpeed;
         float forceDropDelay = PuzzleGameController.instance.forceDropDelay;
-        //¶¬‚µ‚½ƒI[ƒu‚ğ—‚Æ‚·
+        //ç”Ÿæˆã—ãŸã‚ªãƒ¼ãƒ–ã‚’è½ã¨ã™
         while (true)
         {
             yield return null;
@@ -181,7 +181,7 @@ public class GenerateOrbs : MonoBehaviour
                     movingOrb.transform.position = targetPos;
             }
 
-            // ‚·‚×‚Ä‚ÌƒI[ƒu‚ª’…’n‚µ‚½‚çI—¹
+            // ã™ã¹ã¦ã®ã‚ªãƒ¼ãƒ–ãŒç€åœ°ã—ãŸã‚‰çµ‚äº†
             if (allLanded) break;
         }
 
@@ -190,15 +190,15 @@ public class GenerateOrbs : MonoBehaviour
 
 
     /// <summary>
-    /// ƒI[ƒu‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ä•Ô‚·
+    /// ã‚ªãƒ¼ãƒ–ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã—ã¦è¿”ã™
     /// </summary>
-    /// <param name="x">¶¬‚·‚éƒI[ƒu‚ÌAboard“à‚ÌxÀ•W</param>
-    /// <param name="y">¶¬‚·‚éƒI[ƒu‚ÌAboard“à‚ÌyÀ•W</param>
-    /// <param name="instantiatePos">¶¬‚·‚éƒI[ƒu‚ÌWorldÀ•W</param>
+    /// <param name="x">ç”Ÿæˆã™ã‚‹ã‚ªãƒ¼ãƒ–ã®ã€boardå†…ã®xåº§æ¨™</param>
+    /// <param name="y">ç”Ÿæˆã™ã‚‹ã‚ªãƒ¼ãƒ–ã®ã€boardå†…ã®yåº§æ¨™</param>
+    /// <param name="instantiatePos">ç”Ÿæˆã™ã‚‹ã‚ªãƒ¼ãƒ–ã®Worldåº§æ¨™</param>
     /// <returns></returns>
     GameObject InstantiateOrb(int x, int y, Vector2 instantiatePos)
     {
-        int orbColor = UnityEngine.Random.Range(1, 6); // ƒ‰ƒ“ƒ_ƒ€‚ÉF‚ğ5F‚©‚ç‘I‚Ô
+        int orbColor = UnityEngine.Random.Range(1, 6); // ãƒ©ãƒ³ãƒ€ãƒ ã«è‰²ã‚’5è‰²ã‹ã‚‰é¸ã¶
         GameObject newOrb = Instantiate(
             orbColor switch
             {
@@ -220,7 +220,7 @@ public class GenerateOrbs : MonoBehaviour
 
 
     /// <summary>
-    /// board‚É‘¶İ‚·‚éƒI[ƒu‚ğ‘S‚Ä”j‰ó‚·‚é
+    /// boardã«å­˜åœ¨ã™ã‚‹ã‚ªãƒ¼ãƒ–ã‚’å…¨ã¦ç ´å£Šã™ã‚‹
     /// </summary>
     /// <param name="board"></param>
     public void DestroyBoard(Orb[][] board)

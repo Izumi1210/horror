@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,19 +10,19 @@ public class InvaderGameController : MonoBehaviour
     [HideInInspector] public bool isPlayable = false;
     [HideInInspector] public bool isInProgress = false;
 
-    // Enemy‚ÌˆÚ“®”ÍˆÍ
+    // Enemyã®ç§»å‹•ç¯„å›²
     [SerializeField] Transform enemyLeftLimit;
     [SerializeField] Transform enemyRightLimit;
     [HideInInspector] public float leftLimitX;
     [HideInInspector] public float rightLimitX;
 
-    [Header("§ŒÀŠÔ")]
+    [Header("åˆ¶é™æ™‚é–“")]
     public float timeLimit = 60f;
 
-    [Header("UIã’e‚ğ•À‚×‚é‚Æ‚±‚ë")]
+    [Header("UIä¸Šå¼¾ã‚’ä¸¦ã¹ã‚‹ã¨ã“ã‚")]
     [SerializeField] GameObject AmmoIconContainer;
 
-    [Header("c’eA‚à‚µ‚­‚ÍŸ‚ÉŒ‚‚Â’e")]
+    [Header("æ®‹å¼¾ã€ã‚‚ã—ãã¯æ¬¡ã«æ’ƒã¤å¼¾")]
     public List<GameObject> AmmoList;
 
     [SerializeField] GameObject startCanvas;
@@ -31,26 +31,26 @@ public class InvaderGameController : MonoBehaviour
 
     private void Awake()
     {
-        // Singletonƒpƒ^[ƒ“
+        // Singletonãƒ‘ã‚¿ãƒ¼ãƒ³
         if (instance == null)
             instance = this;
         else
             Destroy(this.gameObject);
 
-        // Enemy‚ÌˆÚ“®”ÍˆÍ‚Ìİ’è
+        // Enemyã®ç§»å‹•ç¯„å›²ã®è¨­å®š
         leftLimitX = enemyLeftLimit.position.x;
         rightLimitX = enemyRightLimit.position.x;
         if(leftLimitX > rightLimitX)
-            Debug.LogAssertion("leftLimit‚ÆrightLimit‚ª‹t‚É‚È‚Á‚Ä‚¢‚Ü‚·");
+            Debug.LogAssertion("leftLimitã¨rightLimitãŒé€†ã«ãªã£ã¦ã„ã¾ã™");
     }
 
 
     private void Start()
     {
-        // ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìæ“¾
+        // ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å–å¾—
         invaderTimeController = GetComponent<InvaderTimeController>();
         if (invaderTimeController == null)
-            Debug.LogError("PuzzleTimeControllerƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+            Debug.LogError("PuzzleTimeControllerã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
 
         isPlayable = false;
         isInProgress = false;
@@ -60,7 +60,7 @@ public class InvaderGameController : MonoBehaviour
 
     public void GameStart()
     {
-        Debug.Log("ƒQ[ƒ€ƒXƒ^[ƒg");
+        Debug.Log("ã‚²ãƒ¼ãƒ ã‚¹ã‚¿ãƒ¼ãƒˆ");
         isInProgress = true;
         isPlayable = true;
         invaderTimeController.StartTimer();
@@ -72,15 +72,15 @@ public class InvaderGameController : MonoBehaviour
         isInProgress = false;
         isPlayable = false;
 
-        // ¬Œ÷ˆ—
-        Debug.Log("¬Œ÷");
+        // æˆåŠŸå‡¦ç†
+        Debug.Log("æˆåŠŸ");
     }
 
 
     /// <summary>
-    /// c’e‚É’e‚ğ’Ç‰Á‚·‚é
+    /// æ®‹å¼¾ã«å¼¾ã‚’è¿½åŠ ã™ã‚‹
     /// </summary>
-    /// <param name="newBullet">’Ç‰Á‚·‚é’e‚Ìprefab</param>
+    /// <param name="newBullet">è¿½åŠ ã™ã‚‹å¼¾ã®prefab</param>
     public void AddAmmoIcon(GameObject newBulletIconPrefab)
     {
         GameObject newBulletIcon = Instantiate(newBulletIconPrefab, AmmoIconContainer.transform);
@@ -89,9 +89,9 @@ public class InvaderGameController : MonoBehaviour
     }
 
     /// <summary>
-    /// c’e‚ÌŸ‚Ì’e‚ğæ“¾‚·‚é
+    /// æ®‹å¼¾ã®æ¬¡ã®å¼¾ã‚’å–å¾—ã™ã‚‹
     /// </summary>
-    /// <returns>Ÿ‚Ì’e</returns>
+    /// <returns>æ¬¡ã®å¼¾</returns>
     public GameObject GetNextAmmo()
     {
         GameObject nextAmmoIcon = null;
@@ -104,7 +104,7 @@ public class InvaderGameController : MonoBehaviour
         
         InvaderAmmoIcon iconScript = nextAmmoIcon.GetComponent<InvaderAmmoIcon>();
         if (iconScript == null)
-            Debug.LogAssertion("InvaderAmmoIcon‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½");
+            Debug.LogAssertion("InvaderAmmoIconã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ");
         else
             nextAmmo = iconScript.GetThisAmmo();
 
