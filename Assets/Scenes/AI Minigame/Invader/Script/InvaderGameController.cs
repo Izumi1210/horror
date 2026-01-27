@@ -2,20 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(InvaderTimeController))]
 public class InvaderGameController : MonoBehaviour
 {
     public static InvaderGameController instance;
 
+    [HideInInspector] public bool isPlayable = false;
+    [HideInInspector] public bool isInProgress = false;
+
+    // Enemyの移動範囲
     [SerializeField] Transform enemyLeftLimit;
     [SerializeField] Transform enemyRightLimit;
     [HideInInspector] public float leftLimitX;
     [HideInInspector] public float rightLimitX;
+
+    [Header("制限時間")]
+    public float timeLimit = 60f;
 
     [Header("UI上弾を並べるところ")]
     [SerializeField] GameObject AmmoIconContainer;
 
     [Header("残弾、もしくは次に撃つ弾")]
     public List<GameObject> AmmoList;
+
+    [SerializeField] GameObject startCanvas;
+
+    InvaderTimeController invaderTimeController;
 
     private void Awake()
     {
@@ -31,6 +43,39 @@ public class InvaderGameController : MonoBehaviour
         if(leftLimitX > rightLimitX)
             Debug.LogAssertion("leftLimitとrightLimitが逆になっています");
     }
+
+
+    private void Start()
+    {
+        // コンポーネントの取得
+        invaderTimeController = GetComponent<InvaderTimeController>();
+        if (invaderTimeController == null)
+            Debug.LogError("PuzzleTimeControllerコンポーネントが見つかりません。");
+
+        isPlayable = false;
+        isInProgress = false;
+
+        startCanvas.SetActive(true);
+    }
+
+    public void GameStart()
+    {
+        Debug.Log("ゲームスタート");
+        isInProgress = true;
+        isPlayable = true;
+        invaderTimeController.StartTimer();
+    }
+
+
+    public void GameOver()
+    {
+        isInProgress = false;
+        isPlayable = false;
+
+        // 成功処理
+        Debug.Log("成功");
+    }
+
 
     /// <summary>
     /// 残弾に弾を追加する

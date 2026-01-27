@@ -10,6 +10,10 @@ public class InvaderNormalEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // ゲームが進行中でなければ自分自身を破壊
+        if (!InvaderGameController.instance.isInProgress)
+            DestroyThis();
+
         if (isMovingToRight)
             transform.Translate(Vector3.right * speed * Time.fixedDeltaTime);
         else
@@ -26,7 +30,16 @@ public class InvaderNormalEnemy : MonoBehaviour
             transform.position = new Vector3(InvaderGameController.instance.leftLimitX, transform.position.y - descendingWidth, transform.position.z);
         }
     }
-    
+
+    /// <summary>
+    /// 破壊されるときの処理
+    /// </summary>
+    private void DestroyThis()
+    {
+        Destroy(this.gameObject);
+    }
+
+
     void OnTriggerEnter2D()
     {
         // 簡易的なゲームなので、衝突したら必ずプレイヤーの弾と判定する
@@ -36,6 +49,6 @@ public class InvaderNormalEnemy : MonoBehaviour
     public void OnHitByPlayerBullet()
     {
         // 敵が弾に当たったときの処理
-        Destroy(this.gameObject);
+        DestroyThis();
     }
 }

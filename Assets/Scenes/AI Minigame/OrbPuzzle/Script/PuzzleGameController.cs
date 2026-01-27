@@ -22,8 +22,8 @@ public class PuzzleGameController : MonoBehaviour
 
     public Orb[][] board;
     public Vector2[,] prescribedOrbPos;
-    public bool isPlayable = true;
-    public bool isInProgress = true;
+    public bool isPlayable = false;
+    public bool isInProgress = false;
     [Header("いくつオーブが繋がったら消えるか")]
     public int eraseCount = 4;
     [Header("オーブが落ちる速度")]

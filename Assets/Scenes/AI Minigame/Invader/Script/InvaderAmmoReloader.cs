@@ -11,6 +11,10 @@ public class InvaderAmmoReloader : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // ゲーム進行中でなければリターン
+        if (!InvaderGameController.instance.isInProgress)
+            return;
+
         if (InvaderGameController.instance.AmmoList.Count > maxAmmoNum)
         {
             elapsedTime = 0f;

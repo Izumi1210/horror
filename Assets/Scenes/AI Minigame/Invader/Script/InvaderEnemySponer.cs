@@ -27,6 +27,10 @@ public class InvaderEnemySponer : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // ゲームが進行中でなければ何もしない
+        if (!InvaderGameController.instance.isInProgress)
+            return;
+
         // 一度に複数の敵がスポーンしないようにする
         bool isSpawnable = true;
 
