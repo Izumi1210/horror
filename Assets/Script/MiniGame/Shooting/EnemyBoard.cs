@@ -4,145 +4,145 @@ using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(BoxCollider2D))] // ←クリック可能にする
 public class EnemyBoard : MonoBehaviour, IPointerClickHandler
 {
-    public enum State
-    {
-        Wait,
-        Ready,
-        Attacking,
-        Killed,
-        Disable
-    }
-
+    public enum State { Wait, Ready, Attacking, Killed, Disable }
     State currentState = State.Disable;
+
     Animator enemyAnimator;
     SpriteRenderer enemySpriteRenderer;
 
-    [Header("出現してから銃を構えるまでの時間")]
-    [SerializeField] float waitTIme = 1.0f;
-    [Header("銃を構えてから攻撃するまでの時間")]
+    [SerializeField] float waitTime = 1.0f;
     [SerializeField] float attackInterval = 2.0f;
-    [Header("攻撃力")]
     [SerializeField] int attackPower = 1;
 
     Coroutine waitCoroutine;
 
-    // ▼▼▼ 効果音 ▼▼▼
     [Header("効果音")]
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip sfxEnemyAttack;   // 敵が攻撃するとき
-    [SerializeField] AudioClip sfxEnemyKilled;   // 敵を倒したとき
-    // ▲▲▲ 効果音 ▲▲▲
+    [SerializeField] AudioClip sfxEnemyAttack;
+    [SerializeField] AudioClip sfxEnemyKilled;
 
-    // ▼ ダメージ演出
     [SerializeField] Damage damageEffect;
 
-    void Start()
+    void Awake()
     {
         enemyAnimator = GetComponent<Animator>();
         enemySpriteRenderer = GetComponent<SpriteRenderer>();
-
-        if (enemySpriteRenderer == null)
-            Debug.LogAssertion("SpriteRendererがアタッチされていません。");
-
-        // AudioSource が未設定なら自動取得
-        if (audioSource == null)
-            audioSource = GetComponent<AudioSource>();
-
-        // Damage を自動取得（シーン上のどこかにあるやつ）
-        if (damageEffect == null)
-            damageEffect = FindObjectOfType<Damage>();
-
-        if (damageEffect == null)
-            Debug.LogError("Damage がシーンに見つかりません。画面赤点滅が動きません。");
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        if (damageEffect == null) damageEffect = FindObjectOfType<Damage>();
     }
 
     public void SetStateWait()
     {
-        enemySpriteRenderer.enabled = true;
         currentState = State.Wait;
+        enemySpriteRenderer.enabled = true;
         enemyAnimator.SetTrigger("Wait");
 
         if (waitCoroutine != null)
             StopCoroutine(waitCoroutine);
-        waitCoroutine = StartCoroutine(Wait());
+
+        waitCoroutine = StartCoroutine(WaitRoutine());
+    }
+
+    IEnumerator WaitRoutine()
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        // 撃破済み/無効状態ならここで終了
+        if (currentState == State.Killed || currentState == State.Disable)
+        {
+            waitCoroutine = null;
+            yield break;
+        }
+
+        SetStateReady();
+
+        while (currentState != State.Killed && currentState != State.Disable)
+        {
+            yield return new WaitForSeconds(attackInterval);
+
+            // 攻撃前に撃破されていれば終了
+            if (currentState == State.Killed || currentState == State.Disable) break;
+
+            SetStateAttacking();
+
+            // 攻撃アニメイベントから EnemyAttack() が呼ばれる想定
+        }
+
+        waitCoroutine = null;
     }
 
     public void SetStateReady()
     {
-        enemySpriteRenderer.enabled = true;
         currentState = State.Ready;
         enemyAnimator.SetTrigger("Ready");
     }
 
     public void SetStateAttacking()
     {
-        enemySpriteRenderer.enabled = true;
         currentState = State.Attacking;
         enemyAnimator.SetTrigger("Attack");
 
-        // 敵攻撃SE
         if (audioSource != null && sfxEnemyAttack != null)
             audioSource.PlayOneShot(sfxEnemyAttack);
     }
 
+    void EnemyAttack()
+    {
+        if (ShootingController.instance != null)
+        {
+            ShootingController.instance.PlayerHPChange(-attackPower);
+        }
+
+        if (damageEffect != null)
+            damageEffect.ShowDamage();
+    }
+
     public void SetStateKilled()
     {
-        enemySpriteRenderer.enabled = true;
+        if (currentState == State.Killed || currentState == State.Disable) return;
 
-        if (currentState == State.Wait)
-            enemyAnimator.SetTrigger("DamagedWhileWait");
-        else if (currentState == State.Attacking || currentState == State.Ready)
-            enemyAnimator.SetTrigger("DamagedWhileShoot");
+        // 現在の State を保持
+        State prevState = currentState;
+        currentState = State.Killed;
 
-        // 撃破SE
+        // 待機コルーチンを止める
+        if (waitCoroutine != null)
+        {
+            StopCoroutine(waitCoroutine);
+            waitCoroutine = null;
+        }
+
+        // アニメーション
+        if (enemyAnimator != null)
+        {
+            if (prevState == State.Wait)
+                enemyAnimator.SetTrigger("DamagedWhileWait");
+            else
+                enemyAnimator.SetTrigger("DamagedWhileShoot");
+        }
+
+        // 撃破音
         if (audioSource != null && sfxEnemyKilled != null)
             audioSource.PlayOneShot(sfxEnemyKilled);
-
-        // 攻撃を止める
-        if (waitCoroutine != null)
-            StopCoroutine(waitCoroutine);
-
-        waitCoroutine = null;
-        currentState = State.Killed;
     }
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(waitTIme);
-        SetStateReady();
-
-        while (true)
-        {
-            yield return new WaitForSeconds(attackInterval);
-            SetStateAttacking();
-        }
-    }
 
     public void SetStateDisable()
     {
-        enemySpriteRenderer.enabled = false;
         currentState = State.Disable;
-    }
-
-    void EnemyAttack()
-    {
-        // ダメージ処理
-        ShootingController.instance.PlayerHPChange(-attackPower);
-
-        // ★ 画面を赤くする演出（確実に null で落ちない）
-        if (damageEffect != null)
-            damageEffect.ShowDamage();
+        enemySpriteRenderer.enabled = false;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (currentState == State.Wait || currentState == State.Ready || currentState == State.Attacking)
         {
-            SetStateKilled();  // 撃破音が鳴る
+            SetStateKilled();
         }
     }
 
-    public State GetState() { return currentState; }
+    public State GetState() => currentState;
 }
