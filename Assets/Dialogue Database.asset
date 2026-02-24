@@ -77240,9 +77240,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Damage();
-
-          PlaySE(Warning-Siren02-09(Reverb-Fast-Short));'
+        value: "Damage();\nPlaySE(\u8B66\u5831\u304C\u9CF4\u308B);"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 145
@@ -77266,8 +77264,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 149.96077
-        y: 332.60907
+        x: 150.80464
+        y: 331.7652
         width: 160
         height: 30
     - id: 11
@@ -77716,7 +77714,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 44.495155, y: 386.2887}
+    canvasScrollPosition: {x: 19.178703, y: 113.714935}
     canvasZoom: 0.7900003
   - id: 146
     fields:
@@ -78532,7 +78530,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 72
+        x: 71.33333
         y: 332.66666
         width: 160
         height: 30
@@ -79555,9 +79553,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'PlaySE(Warning-Siren02-09(Reverb-Fast-Short));
-
-          Damage();'
+        value: "PlaySE(\u8B66\u5831\u304C\u9CF4\u308B);\nDamage();"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 147
@@ -79910,8 +79906,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 9.468582, y: 6.5951104}
-    canvasZoom: 1.0900002
+    canvasScrollPosition: {x: 0, y: 1044.8569}
+    canvasZoom: 0.8800003
   - id: 148
     fields:
     - title: Title
@@ -81270,12 +81266,12 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 340.4281
-        y: 48.807358
+        y: 48.19574
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1.0899999
+    canvasZoom: 1
   - id: 152
     fields:
     - title: Title
@@ -86668,8 +86664,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 327.13263}
-    canvasZoom: 1.1199998
+    canvasScrollPosition: {x: 107.40688, y: 124.96384}
+    canvasZoom: 1.1499997
   - id: 156
     fields:
     - title: Title
