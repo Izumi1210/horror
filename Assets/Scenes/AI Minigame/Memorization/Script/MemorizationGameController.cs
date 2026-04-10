@@ -4,10 +4,31 @@ using UnityEngine;
 
 public class MemorizationGameController : MonoBehaviour
 {
+    public static MemorizationGameController instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
+    }
+
     [Header("全てのMemorizationSymbolを入れる")]
     [SerializeField] private MemorizationSymbol[] memorizationSymbolsInfo;
     [Header("Syambolを生成する場所")]
     [SerializeField] private Transform symbolGeneratePoint;
+    [Header("答えるためのボタン")]
+    [SerializeField] private GameObject buttons;
 
     [Header("プレイするレベルの情報")]
     [SerializeField] private MemorizationGameLevel levelInfo;
@@ -19,15 +40,19 @@ public class MemorizationGameController : MonoBehaviour
     private GameObject[] memorizationSymbols;   // 生成したSymbolを入れる配列
     private string[] memorizationSymbolNames;   // 生成したSymbolの名前を入れる配列
 
+    private MemorizationSymbol[] correctSymbols;  // 答えのSymbolを入れる配列
+
     private void Start()
     {
         InitializeSymbols();
+        ButtonsInitialize();
 
         if (levelInfo == null)
         {
             Debug.LogError("レベルの情報が設定されていません。");
             return;
         }
+
         StartCoroutine(DisplaySymbol());
     }
 
@@ -53,6 +78,11 @@ public class MemorizationGameController : MonoBehaviour
         }
 
         Debug.Log("全てのSymbolの表示が完了しました。");
+
+        yield return new WaitForSeconds(initialWaitTime);
+
+        // ここでプレイヤーの入力を受け付ける処理を開始する
+        buttons.SetActive(true);  // 答えるためのボタンを表示
     }
 
 
@@ -61,6 +91,8 @@ public class MemorizationGameController : MonoBehaviour
     /// </summary>
     void InitializeSymbols()
     {
+        buttons.SetActive(false);  // 答えるためのボタンを非表示
+
         int symbolCount = memorizationSymbolsInfo.Length;
 
         memorizationSymbols = new GameObject[symbolCount];
@@ -100,5 +132,43 @@ public class MemorizationGameController : MonoBehaviour
             }
         }
         return -1;  // 見つからない場合は-1を返す
+    }
+
+
+    private int symbolCount; // プレイヤーが答えるべきSymbolの数
+    private void ButtonsInitialize()
+    {
+        symbolCount = levelInfo.DisplayOrder.Count;
+        correctSymbols = new MemorizationSymbol[symbolCount];
+        for (int i = 0; i < symbolCount; i++)
+        {
+            correctSymbols[i] = levelInfo.DisplayOrder[i];
+        }
+    }
+
+    private int currentAnswerIndex = 0;  // プレイヤーが現在答えるべきSymbolの添字
+    public void ButtonCheck(MemorizationSymbol symbolInfo)
+    {
+        if(currentAnswerIndex < symbolCount)
+        {
+            if (symbolInfo == correctSymbols[currentAnswerIndex])
+            {
+                Debug.Log("正解");
+                // 正解したときの処理
+
+                currentAnswerIndex++;
+            }
+            else
+            {
+                Debug.Log("不正解");
+                // 不正解のときの処理
+            }
+
+            if (currentAnswerIndex == symbolCount)
+            {
+                Debug.Log("全て正解しました");
+                // 全て正解したときの処理
+            }
+        }
     }
 }
